@@ -23,11 +23,52 @@
         }
 
         .font-title { font-family: 'Oswald', sans-serif; }
+
+        /* Elemento decorativo geométrico */
+        .geometric-accent {
+            position: absolute;
+            opacity: 0.15;
+            z-index: 2;
+        }
+
+        .triangle-orange {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 0px solid transparent;
+            border-bottom: 150px solid var(--orange-brand);
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .line-decoration {
+            position: absolute;
+            background: linear-gradient(90deg, var(--orange-brand), transparent);
+        }
+
+        .pattern-bg {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,102,0,0.02) 35px, rgba(255,102,0,0.02) 70px);
+            z-index: 1;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
 
     <div class="relative w-full max-w-[794px] aspect-[1/1.414] bg-white shadow-2xl overflow-hidden flex flex-col">
+        
+        <!-- Patrón de fondo decorativo -->
+        <div class="pattern-bg"></div>
+
+        <!-- Triángulo decorativo en esquina inferior izquierda -->
+        <div class="absolute bottom-0 left-0 triangle-orange" style="border-left: 120px solid transparent; border-bottom: 120px solid var(--orange-brand);"></div>
+
+        <!-- Línea decorativa horizontal -->
+        <div class="absolute bottom-40 left-0 w-32 h-1 line-decoration" style="background: linear-gradient(90deg, var(--orange-brand), transparent);"></div>
         
         <div class="h-[20%] bg-[var(--bg-dark)] px-14 pt-16 flex flex-col justify-center relative">
             <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 20px 20px;"></div>
@@ -43,56 +84,140 @@
             </h1>
         </div>
 
-        <div class="flex-1 px-14 py-10 flex flex-col">
+        <div class="flex-1 px-14 py-10 flex flex-col relative z-10">
             
-            <div class="bg-[var(--steel-blue)] border-l-[6px] border-[#FF6600] p-8 shadow-md mb-10">
-                <p class="text-white font-light text-lg leading-relaxed text-justify">
-                    Somos una empresa orgullosamente cajabambina con más de <span class="text-[var(--orange-light)] font-semibold">5 años de sólida experiencia</span> en el rubro metalmecánico. En INTAY CORPORATION SAC, nos especializamos en la ejecución de obras de alta exigencia, transformando el acero en estructuras seguras, eficientes y duraderas para el sector educativo, industrial y minero.
+            <div class="bg-[var(--steel-blue)] border-l-[6px] border-[#FF6600] p-8 shadow-md mb-10 relative overflow-hidden group">
+                <!-- Efecto geométrico decorativo -->
+                <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#FF6600]/10 to-transparent rounded-full blur-3xl group-hover:scale-125 transition-transform duration-500"></div>
+                <div class="absolute bottom-0 right-20 w-1 h-32 bg-gradient-to-t from-[#FF6600]/20 to-transparent"></div>
+                
+                <p class="text-white font-light text-lg leading-relaxed text-justify relative z-10">
+                    Somos una empresa orgullosamente cajabambina con más de <span class="text-[var(--orange-light)] font-semibold">3 años de sólida experiencia</span> en el rubro metalmecánico. En INTAY CORPORATION SAC, nos especializamos en la ejecución de obras de alta exigencia, transformando el acero en estructuras seguras, eficientes y duraderas para el sector educativo, industrial y minero.
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 gap-8 mb-10">
-                
-                <div class="bg-gray-100 border-t-4 border-[#FF6600] p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <svg class="w-10 h-10 text-[#FF6600] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    
-                    <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase tracking-wider mb-3">Nuestra Misión</h3>
-                    <p class="text-gray-700 font-light text-sm leading-relaxed text-justify">
-                        Brindar soluciones metalmecánicas integrales de la más alta calidad, cumpliendo con los plazos establecidos y superando las expectativas de nuestros clientes, garantizando siempre la seguridad estructural en cada proyecto.
-                    </p>
+            <div class="grid grid-cols-2 gap-8 mb-10 relative z-10">
+
+                <!-- TARJETA MISIÓN -->
+                <div class="bg-white border border-gray-200 shadow-lg relative overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-top: 4px solid #FF6600;">
+                    <!-- Fondo geométrico SVG -->
+                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Hexágono grande decorativo fondo -->
+                        <polygon points="240,10 290,45 290,115 240,150 190,115 190,45" fill="none" stroke="rgba(255,102,0,0.07)" stroke-width="1.5"/>
+                        <polygon points="250,20 285,50 285,110 250,140 215,110 215,50" fill="none" stroke="rgba(255,102,0,0.05)" stroke-width="1"/>
+                        <!-- Líneas diagonales industriales -->
+                        <line x1="0" y1="220" x2="80" y2="120" stroke="rgba(255,102,0,0.06)" stroke-width="1.5"/>
+                        <line x1="0" y1="200" x2="60" y2="120" stroke="rgba(255,102,0,0.04)" stroke-width="1"/>
+                        <!-- Cuadrado esquina inferior derecha -->
+                        <rect x="220" y="160" width="50" height="50" fill="none" stroke="rgba(28,45,66,0.08)" stroke-width="1.5" transform="rotate(15, 245, 185)"/>
+                        <!-- Punto acento -->
+                        <circle cx="280" cy="30" r="3" fill="rgba(255,102,0,0.15)"/>
+                        <circle cx="270" cy="30" r="1.5" fill="rgba(255,102,0,0.1)"/>
+                    </svg>
+                    <!-- Franja lateral izquierda naranja -->
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#FF6600] to-[#FF6600]/20"></div>
+                    <!-- Esquina decorativa superior derecha -->
+                    <div class="absolute top-0 right-0 w-0 h-0" style="border-top: 28px solid #FF6600; border-left: 28px solid transparent; opacity:0.15;"></div>
+
+                    <div class="relative z-10 p-8">
+                        <!-- Icono diana / target -->
+                        <div class="w-12 h-12 mb-4 relative">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-12 h-12">
+                                <!-- Círculo exterior -->
+                                <circle cx="24" cy="24" r="21" stroke="#FF6600" stroke-width="2" opacity="0.3"/>
+                                <!-- Círculo medio -->
+                                <circle cx="24" cy="24" r="14" stroke="#FF6600" stroke-width="2" opacity="0.6"/>
+                                <!-- Círculo interior -->
+                                <circle cx="24" cy="24" r="7" stroke="#FF6600" stroke-width="2"/>
+                                <!-- Centro sólido -->
+                                <circle cx="24" cy="24" r="3" fill="#FF6600"/>
+                                <!-- Flecha diagonal -->
+                                <line x1="34" y1="8" x2="26" y2="21" stroke="#FF6600" stroke-width="2.5" stroke-linecap="round"/>
+                                <!-- Punta de flecha -->
+                                <polyline points="26,21 27,16 32,18" fill="#FF6600" stroke="#FF6600" stroke-width="1" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase tracking-wider mb-3">Nuestra Misión</h3>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed text-justify">
+                            Brindar soluciones metalmecánicas integrales de la más alta calidad, cumpliendo con los plazos establecidos y superando las expectativas de nuestros clientes, garantizando siempre la seguridad estructural en cada proyecto.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="bg-gray-100 border-t-4 border-[#FF6600] p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <svg class="w-10 h-10 text-[#FF6600] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                    
-                    <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase tracking-wider mb-3">Nuestra Visión</h3>
-                    <p class="text-gray-700 font-light text-sm leading-relaxed text-justify">
-                        Consolidarnos como la empresa metalmecánica líder a nivel regional y nacional, reconocidos por nuestra capacidad técnica, innovación constante y compromiso inquebrantable con la excelencia operativa.
-                    </p>
+                <!-- TARJETA VISIÓN -->
+                <div class="bg-white border border-gray-200 shadow-lg relative overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-top: 4px solid #FF6600;">
+                    <!-- Fondo geométrico SVG -->
+                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Triángulo grande fondo -->
+                        <polygon points="300,0 300,120 180,0" fill="rgba(255,102,0,0.04)"/>
+                        <!-- Líneas de cuadrícula técnica -->
+                        <line x1="160" y1="0" x2="300" y2="140" stroke="rgba(28,45,66,0.05)" stroke-width="1"/>
+                        <line x1="200" y1="0" x2="300" y2="100" stroke="rgba(28,45,66,0.04)" stroke-width="1"/>
+                        <!-- Hexágono esquina inferior izquierda -->
+                        <polygon points="10,180 40,165 70,180 70,210 40,225 10,210" fill="none" stroke="rgba(255,102,0,0.07)" stroke-width="1.5"/>
+                        <!-- Cruz técnica -->
+                        <line x1="255" y1="170" x2="295" y2="170" stroke="rgba(255,102,0,0.1)" stroke-width="1"/>
+                        <line x1="275" y1="150" x2="275" y2="190" stroke="rgba(255,102,0,0.1)" stroke-width="1"/>
+                        <!-- Punto acento -->
+                        <circle cx="20" cy="20" r="3" fill="rgba(255,102,0,0.15)"/>
+                        <circle cx="30" cy="20" r="1.5" fill="rgba(255,102,0,0.1)"/>
+                    </svg>
+                    <!-- Franja lateral izquierda naranja -->
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#FF6600] to-[#FF6600]/20"></div>
+                    <!-- Esquina decorativa superior derecha -->
+                    <div class="absolute top-0 right-0 w-0 h-0" style="border-top: 28px solid #FF6600; border-left: 28px solid transparent; opacity:0.15;"></div>
+
+                    <div class="relative z-10 p-8">
+                        <!-- Icono Visión: telescopio / ojo técnico -->
+                        <div class="w-12 h-12 mb-4 relative">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-12 h-12">
+                                <!-- Ojo exterior -->
+                                <path d="M4 24 C10 12, 38 12, 44 24 C38 36, 10 36, 4 24 Z" stroke="#FF6600" stroke-width="2" opacity="0.4" fill="none"/>
+                                <!-- Ojo interior más definido -->
+                                <path d="M10 24 C16 15, 32 15, 38 24 C32 33, 16 33, 10 24 Z" stroke="#FF6600" stroke-width="2" fill="none"/>
+                                <!-- Iris -->
+                                <circle cx="24" cy="24" r="6" stroke="#FF6600" stroke-width="2"/>
+                                <!-- Pupila -->
+                                <circle cx="24" cy="24" r="2.5" fill="#FF6600"/>
+                                <!-- Rayos de visión -->
+                                <line x1="24" y1="4" x2="24" y2="10" stroke="#FF6600" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                                <line x1="38" y1="10" x2="34" y2="14" stroke="#FF6600" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                                <line x1="10" y1="10" x2="14" y2="14" stroke="#FF6600" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase tracking-wider mb-3">Nuestra Visión</h3>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed text-justify">
+                            Consolidarnos como la empresa metalmecánica líder a nivel regional y nacional, reconocidos por nuestra capacidad técnica, innovación constante y compromiso inquebrantable con la excelencia operativa.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div class="flex items-center justify-center mb-10 opacity-70">
-                <div class="h-px bg-gray-300 flex-1"></div>
-                <div class="w-2.5 h-2.5 rounded-full bg-[#FF6600] mx-4"></div>
-                <div class="h-px bg-gray-300 flex-1"></div>
+            <div class="flex items-center justify-center mb-10 opacity-70 relative z-10">
+                <div class="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent flex-1"></div>
+                <div class="w-3 h-3 rounded-full bg-[#FF6600] mx-4 shadow-md"></div>
+                <div class="w-2 h-2 rounded-full bg-[#FF6600]/50 mx-2"></div>
+                <div class="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent flex-1"></div>
             </div>
 
-            <div class="grid grid-cols-3 gap-6 mt-auto">
+            <div class="grid grid-cols-3 gap-6 mt-auto relative z-10">
                 
-                <div class="bg-gray-50 border border-gray-200 p-6 flex flex-col items-center justify-center text-center">
-                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2">+5</span>
-                    <span class="text-[var(--bg-dark)] text-xs font-semibold uppercase tracking-widest">Años de Experiencia</span>
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-[#FF6600]/30 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group hover:border-[#FF6600] transition-colors">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#FF6600]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2 relative z-10">+3</span>
+                    <span class="text-[var(--bg-dark)] text-xs font-semibold uppercase tracking-widest relative z-10">Años de Experiencia</span>
                 </div>
 
-                <div class="bg-gray-50 border border-gray-200 p-6 flex flex-col items-center justify-center text-center">
-                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2">3</span>
-                    <span class="text-[var(--bg-dark)] text-xs font-semibold uppercase tracking-widest">Sectores Atendidos</span>
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-[#FF6600]/30 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group hover:border-[#FF6600] transition-colors">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#FF6600]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2 relative z-10">3</span>
+                    <span class="text-[var(--bg-dark)] text-xs font-semibold uppercase tracking-widest relative z-10">Sectores Atendidos</span>
                 </div>
 
-                <div class="bg-gray-50 border border-gray-200 p-6 flex flex-col items-center justify-center text-center">
-                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2">100%</span>
-                    <span class="text-[var(--bg-dark)] text-xs font-semibold uppercase tracking-widest">Calidad Garantizada</span>
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-[#FF6600]/30 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group hover:border-[#FF6600] transition-colors">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#FF6600]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2 relative z-10">100%</span>
+                    <span class="text-[var(--bg-dark)] text-xs font-semibold uppercase tracking-widest relative z-10">Calidad Garantizada</span>
                 </div>
 
             </div>

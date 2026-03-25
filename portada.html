@@ -26,7 +26,7 @@
 
         /* Cuadrícula de papel milimetrado tenue */
         .industrial-grid {
-            background-color: #1a2332;
+            background-color: #2a3a48;
             background-image: 
                 linear-gradient(rgba(255, 102, 0, 0.04) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 102, 0, 0.04) 1px, transparent 1px);
@@ -50,6 +50,53 @@
         .octagon {
             clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
         }
+
+        /* Elementos decorativos geométricos */
+        .logo-decoration {
+            position: absolute;
+            border: 2px solid rgba(255, 102, 0, 0.3);
+            border-radius: 50%;
+        }
+
+        .decoration-ring-1 {
+            width: 420px;
+            height: 420px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin 30s linear infinite reverse;
+        }
+
+        .decoration-ring-2 {
+            width: 500px;
+            height: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(255, 102, 0, 0.2);
+            animation: spin 40s linear infinite;
+        }
+
+        .decoration-corner-top-left {
+            width: 120px;
+            height: 120px;
+            border-right: 3px solid var(--orange-brand);
+            border-bottom: 3px solid var(--orange-brand);
+            opacity: 0.4;
+        }
+
+        .decoration-corner-bottom-right {
+            width: 80px;
+            height: 80px;
+            border-left: 3px solid var(--orange-brand);
+            border-top: 3px solid var(--orange-brand);
+            opacity: 0.4;
+        }
+
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -58,8 +105,20 @@
         
         <div class="absolute top-0 left-0 w-full h-2 bg-[#FF6600] z-20"></div>
 
-        <div class="absolute -top-16 left-10 flex items-center gap-4 z-20">
-            <img src="logo.jpeg" alt="INTAY CORPORATION" class="w-80 h-80 object-contain">
+        <div class="absolute -top-20 left-0 flex items-center justify-center gap-4 z-20" style="width: 400px; height: 400px;">
+            <!-- Anillos decorativos giratorios -->
+            <div class="logo-decoration decoration-ring-1"></div>
+            <div class="logo-decoration decoration-ring-2"></div>
+            
+            <!-- Logo central -->
+            <img src="logo.jpeg" alt="INTAY CORPORATION" class="w-80 h-80 object-contain absolute z-30 drop-shadow-2xl">
+            
+
+            <!-- Esquina decorativa superior izquierda -->
+            <div class="decoration-corner-top-left absolute -top-4 -left-4"></div>
+            
+            <!-- Esquina decorativa inferior derecha -->
+            <div class="decoration-corner-bottom-right absolute -bottom-4 -right-4"></div>
         </div>
 
         <div class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-[500px] h-[300px]">
