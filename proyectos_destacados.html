@@ -68,6 +68,7 @@
 
         <!-- Franja Azul Marino Superior -->
         <div class="h-[15%] bg-[var(--bg-dark)] px-14 flex flex-col justify-center relative">
+            <img src="logo.jpeg" alt="INTAY CORPORATION" class="absolute top-2 right-4 w-60 object-contain z-20" style="height:auto; max-height:120px;">
             <div class="relative z-10 flex items-center gap-3 mb-1">
                 <div class="w-8 h-[2px] bg-[#FF6600]"></div>
                 <span class="text-[#FF6600] font-title text-xl font-bold tracking-widest">03</span>
@@ -79,23 +80,23 @@
         </div>
 
         <!-- Contenido Principal -->
-        <div class="flex-1 px-14 py-6 flex flex-col gap-4">
+        <div class="flex-1 px-14 py-8 flex flex-col justify-between gap-6">
 
             <!-- TARJETA 1: Obra Educativa — foto principal -->
-            <div class="flex group shadow-lg overflow-hidden border border-gray-100" style="height: 130px;">
-                <div class="relative flex-shrink-0 overflow-hidden" style="width: 55%;">
+            <div class="flex group shadow-md overflow-hidden border border-gray-100" style="height: 160px;">
+                <div class="relative flex-shrink-0 overflow-hidden" style="width: 50%;">
                     <img src="imagenes/proyectos/image.png" alt="Techado Institución Educativa"
                          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute top-3 left-0 bg-[#FF6600] text-white text-[9px] font-bold px-3 py-1 tracking-widest uppercase label-tag z-10">
+                    <div class="absolute top-3 left-0 bg-[#FF6600] text-white text-[10px] font-bold px-4 py-1.5 tracking-widest uppercase label-tag z-10">
                         Obra Educativa
                     </div>
                 </div>
-                <div class="flex-1 bg-white px-6 py-4 flex flex-col justify-center relative overflow-hidden">
-                    <div class="absolute top-0 right-0 opacity-[0.04]" style="width:80px;height:80px;">
+                <div class="flex-1 bg-white px-8 py-6 flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-[0.04]" style="width:100px;height:100px;">
                         <svg viewBox="0 0 80 80"><polygon points="80,0 80,80 0,80" fill="#040812"/></svg>
                     </div>
-                    <div class="w-8 h-0.5 bg-[#FF6600] mb-2"></div>
-                    <h3 class="font-title text-[var(--bg-dark)] text-xl uppercase leading-tight font-bold mb-1">
+                    <div class="w-8 h-0.5 bg-[#FF6600] mb-3"></div>
+                    <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase leading-tight font-bold mb-2">
                         Techado Institución Educativa
                     </h3>
                     <p class="text-gray-500 text-xs leading-relaxed">
@@ -105,78 +106,79 @@
             </div>
 
             <!-- TARJETA 1b: Segunda vista del mismo proyecto educativo -->
-            <div class="flex group shadow-lg overflow-hidden border border-gray-100" style="height: 130px;">
-                <div class="relative flex-shrink-0 overflow-hidden" style="width: 55%;">
-                    <img src="imagenes/proyectos/image copy.png" alt="Vista detalle Institución Educativa"
-                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute top-3 left-0 bg-[var(--steel-blue)] text-white text-[9px] font-bold px-3 py-1 tracking-widest uppercase label-tag z-10">
-                        Vista Detalle
+            <div class="flex group shadow-md overflow-hidden border border-gray-100" style="height: 160px;">
+                <div class="flex-1 bg-gray-50 px-8 py-6 flex flex-col justify-center relative overflow-hidden border-r-[3px] border-[#FF6600]/30 text-right">
+                    <div class="absolute top-0 left-0 opacity-[0.04]" style="width:100px;height:100px;">
+                        <svg viewBox="0 0 80 80"><polygon points="0,0 80,0 0,80" fill="#040812"/></svg>
                     </div>
-                </div>
-                <div class="flex-1 bg-gray-50 px-6 py-4 flex flex-col justify-center relative overflow-hidden border-l-[3px] border-[#FF6600]/30">
-                    <div class="absolute top-0 right-0 opacity-[0.04]" style="width:80px;height:80px;">
-                        <svg viewBox="0 0 80 80"><polygon points="80,0 80,80 0,80" fill="#040812"/></svg>
-                    </div>
+                    <h3 class="font-title text-[var(--steel-blue)] text-lg uppercase leading-tight font-bold mb-2">
+                        Trabajo en Terreno
+                    </h3>
                     <p class="text-gray-500 text-xs leading-relaxed italic">
                         Proceso de montaje y soldadura estructural en campo. Personal certificado con equipos de protección y protocolos SOMA activos en toda la obra.
                     </p>
                 </div>
+                <div class="relative flex-shrink-0 overflow-hidden" style="width: 50%;">
+                    <img src="imagenes/proyectos/image copy.png" alt="Vista detalle Institución Educativa"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute top-3 right-0 bg-[var(--steel-blue)] text-white text-[10px] font-bold px-4 py-1.5 tracking-widest uppercase label-tag-right z-10" style="clip-path: polygon(8% 100%, 100% 100%, 100% 0, 0 0);">
+                        Vista Detalle
+                    </div>
+                </div>
             </div>
 
             <!-- TARJETA 2: Nave Industrial -->
-            <div class="flex group shadow-lg overflow-hidden border border-gray-100" style="height: 130px;">
-                <div class="relative flex-shrink-0 overflow-hidden" style="width: 55%;">
+            <div class="flex group shadow-md overflow-hidden border border-gray-100" style="height: 160px;">
+                <div class="relative flex-shrink-0 overflow-hidden" style="width: 50%;">
                     <img src="imagenes/proyectos/nave/image.png" alt="Nave y Centro de Almacenamiento"
                          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute top-3 left-0 bg-[#FF6600] text-white text-[9px] font-bold px-3 py-1 tracking-widest uppercase label-tag z-10">
+                    <div class="absolute top-3 left-0 bg-[#FF6600] text-white text-[10px] font-bold px-4 py-1.5 tracking-widest uppercase label-tag z-10">
                         Obra Industrial
                     </div>
                 </div>
-                <div class="flex-1 bg-white px-6 py-4 flex flex-col justify-center relative overflow-hidden">
-                    <div class="absolute top-0 right-0 opacity-[0.04]" style="width:80px;height:80px;">
+                <div class="flex-1 bg-white px-8 py-6 flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-[0.04]" style="width:100px;height:100px;">
                         <svg viewBox="0 0 80 80"><polygon points="80,0 80,80 0,80" fill="#040812"/></svg>
                     </div>
-                    <div class="w-8 h-0.5 bg-[#FF6600] mb-2"></div>
-                    <h3 class="font-title text-[var(--bg-dark)] text-xl uppercase leading-tight font-bold mb-1">
-                        Nave y Centro de Almacenamiento
+                    <div class="w-8 h-0.5 bg-[#FF6600] mb-3"></div>
+                    <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase leading-tight font-bold mb-2">
+                        Nave de Almacenamiento
                     </h3>
                     <p class="text-gray-500 text-xs leading-relaxed">
                         Estructura pesada con pórticos de alma llena, optimización de espacios y acabados industriales de alta durabilidad para sector logístico.
-                    </p>
-
                     </p>
                 </div>
             </div>
 
             <!-- ESPECIALIDADES: compacto 2 columnas -->
-            <div class="bg-[var(--bg-dark)] px-8 py-5 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-24 h-24 opacity-[0.05]">
+            <div class="bg-[var(--bg-dark)] px-8 py-6 relative overflow-hidden mt-2">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-[0.05]">
                     <svg fill="#FF6600" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 </div>
-                <h4 class="text-[#FF6600] font-title text-xs font-bold tracking-[0.4em] uppercase mb-4">Especialidad en Grandes Estructuras</h4>
-                <div class="grid grid-cols-2 gap-x-8 gap-y-2">
-                    <div class="flex items-center gap-2">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                <h4 class="text-[#FF6600] font-title text-sm font-bold tracking-[0.4em] uppercase mb-5">Especialidad en Grandes Estructuras</h4>
+                <div class="grid grid-cols-2 gap-x-8 gap-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
                         <span class="text-white text-xs font-light">Coberturas metálicas de grandes luces.</span>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
                         <span class="text-white text-xs font-light">Naves industriales y almacenes.</span>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
                         <span class="text-white text-xs font-light">Cerramientos con aislación térmica.</span>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
                         <span class="text-white text-xs font-light">Estructuras pesadas sector minero.</span>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
                         <span class="text-white text-xs font-light">Diseño sismo-resistente.</span>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
                         <span class="text-white text-xs font-light">Proyectos llave en mano.</span>
                     </div>
                 </div>
