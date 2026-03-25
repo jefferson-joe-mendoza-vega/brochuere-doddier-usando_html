@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 5 - Nuestras Especialidades | INTAY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #040812;      /* Azul marino casi negro */
+            --orange-brand: #FF6600; /* Naranja industrial */
+            --steel-blue: #1C2D42;   /* Azul acero */
+        }
+
+        body { 
+            background-color: #f3f4f6; 
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-title { font-family: 'Oswald', sans-serif; }
+
+        .a4-container {
+            width: 794px;
+            aspect-ratio: 1 / 1.414;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .a4-container { box-shadow: none; width: 210mm; height: 297mm; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-container flex flex-col">
+        
+        <!-- Franja Azul Marino Superior -->
+        <div class="h-[15%] bg-[var(--bg-dark)] px-14 flex flex-col justify-center relative">
+            <div class="relative z-10 flex items-center gap-3 mb-1">
+                <div class="w-8 h-[2px] bg-[#FF6600]"></div>
+                <span class="text-[#FF6600] font-title text-xl font-bold tracking-widest">04</span>
+            </div>
+            <h1 class="relative z-10 text-white font-title text-5xl uppercase tracking-tight leading-none">
+                Nuestras <span class="text-[#FF6600]">Especialidades</span>
+            </h1>
+            <div class="absolute right-0 bottom-0 w-32 h-1 bg-[#FF6600]"></div>
+        </div>
+
+        <!-- Contenido Principal: Cuadrícula 2x2 -->
+        <div class="flex-1 px-14 py-10">
+            <div class="grid grid-cols-2 gap-8 h-full">
+                
+                <!-- Tarjeta 1: Techos Metálicos -->
+                <div class="bg-white border border-gray-100 flex flex-col p-8 relative shadow-sm border-b-4 border-b-[#FF6600]">
+                    <div class="text-[#FF6600] mb-6">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-title text-[var(--bg-dark)] text-xl uppercase mb-3 font-bold tracking-tight">Techos Metálicos</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-6">
+                        Soluciones avanzadas en coberturas para grandes áreas. Utilizamos materiales de alta resistencia y sistemas de fijación que garantizan hermeticidad y durabilidad.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Autoportante</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Aluzinc</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Tratado Térmico</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Construcciones Metálicas -->
+                <div class="bg-white border border-gray-100 flex flex-col p-8 relative shadow-sm border-b-4 border-b-[#FF6600]">
+                    <div class="text-[#FF6600] mb-6">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-title text-[var(--bg-dark)] text-xl uppercase mb-3 font-bold tracking-tight">Construcciones Metálicas</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-6">
+                        Ejecución de naves industriales, almacenes y estructuras de soporte pesado. Ingeniería aplicada para optimizar costos y tiempos de montaje en obra.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Naves</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Pórticos</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Alma Llena</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Carpintería Metálica -->
+                <div class="bg-white border border-gray-100 flex flex-col p-8 relative shadow-sm border-b-4 border-b-[#FF6600]">
+                    <div class="text-[#FF6600] mb-6">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-title text-[var(--bg-dark)] text-xl uppercase mb-3 font-bold tracking-tight">Carpintería Industrial</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-6">
+                        Fabricación de elementos complementarios de alta seguridad: portones industriales, escalas de gato, protectores y barandas certificadas.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Portones</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Seguridad</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Acabados</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4: Fabricación de Maquinaria -->
+                <div class="bg-white border border-gray-100 flex flex-col p-8 relative shadow-sm border-b-4 border-b-[#FF6600]">
+                    <div class="text-[#FF6600] mb-6">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="12" r="3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-title text-[var(--bg-dark)] text-xl uppercase mb-3 font-bold tracking-tight">Fabricación de Equipos</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-6">
+                        Diseño y manufactura de equipos para la industria agroalimentaria y minería. Molinos, clasificadoras y tanques de alta precisión técnica.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Molinos</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Tolvas</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[9px] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">Agroindustrial</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FRANJA DE SECTORES (PIE DE PÁGINA) -->
+        <div class="bg-gray-100 border-t border-gray-200 py-8 px-14">
+            <div class="grid grid-cols-3">
+                
+                <!-- Sector Educativo -->
+                <div class="flex flex-col items-center text-center px-4 border-r border-gray-300">
+                    <div class="text-[var(--bg-dark)] mb-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z" stroke-width="2"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-width="2"/></svg>
+                    </div>
+                    <h4 class="font-title text-[var(--bg-dark)] text-sm font-bold uppercase tracking-widest mb-2">Educativo</h4>
+                    <p class="text-[10px] text-gray-500 leading-tight">Techados de coliseos, patios y centros recreativos.</p>
+                </div>
+
+                <!-- Sector Industrial -->
+                <div class="flex flex-col items-center text-center px-4 border-r border-gray-300">
+                    <div class="text-[var(--bg-dark)] mb-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1" stroke-width="2"/></svg>
+                    </div>
+                    <h4 class="font-title text-[var(--bg-dark)] text-sm font-bold uppercase tracking-widest mb-2">Industrial</h4>
+                    <p class="text-[10px] text-gray-500 leading-tight">Plantas de producción, almacenes y naves logísticas.</p>
+                </div>
+
+                <!-- Sector Minero -->
+                <div class="flex flex-col items-center text-center px-4">
+                    <div class="text-[var(--bg-dark)] mb-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2"/></svg>
+                    </div>
+                    <h4 class="font-title text-[var(--bg-dark)] text-sm font-bold uppercase tracking-widest mb-2">Minero</h4>
+                    <p class="text-[10px] text-gray-500 leading-tight">Chutes, tolvas y estructuras de soporte pesado.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer discreto -->
+        <div class="h-6 bg-[var(--steel-blue)] w-full"></div>
+    </div>
+
+</body>
+</html>

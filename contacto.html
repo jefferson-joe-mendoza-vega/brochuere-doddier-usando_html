@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 6 - Contacto | INTAY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #040812;      /* Azul marino casi negro */
+            --orange-brand: #FF6600; /* Naranja industrial */
+            --steel-blue: #1C2D42;   /* Azul acero */
+        }
+
+        body { 
+            background-color: #9ca3af; 
+            display: flex;
+            justify-content: center;
+            padding: 2rem 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-title { font-family: 'Oswald', sans-serif; }
+
+        .a4-container {
+            width: 794px;
+            aspect-ratio: 1 / 1.414;
+            background-color: var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Cuadrícula naranja fina para todo el fondo */
+        .industrial-grid-orange {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 102, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 102, 0, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 1;
+        }
+
+        /* Forma del logo (Octágono) */
+        .octagon {
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .a4-container { box-shadow: none; width: 210mm; height: 297mm; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-container">
+        <!-- Fondo de Cuadrícula -->
+        <div class="industrial-grid-orange"></div>
+
+        <!-- Barra naranja superior -->
+        <div class="absolute top-0 left-0 w-full h-2 bg-[#FF6600] z-20"></div>
+
+        <!-- CONTENIDO CENTRALIZADO -->
+        <div class="relative z-10 flex flex-col items-center text-center w-full px-16">
+            
+            <!-- LOGO -->
+            <div class="flex flex-col items-center mb-12">
+                <div class="w-24 h-24 bg-[#FF6600] octagon flex items-center justify-center mb-6 shadow-xl">
+                    <span class="text-white font-title font-bold text-4xl tracking-tighter mt-1">IC</span>
+                </div>
+                <div class="text-white font-title text-4xl tracking-wide leading-none uppercase">
+                    INTAY <span class="text-[#FF6600]">CORPORATION</span> SAC
+                </div>
+                <div class="mt-3 text-gray-500 text-[10px] uppercase tracking-[0.4em] font-medium">
+                    Ingeniería Metalmecánica · Cajabamba · Perú
+                </div>
+            </div>
+
+            <!-- TÍTULO DE CIERRE -->
+            <div class="mb-16">
+                <h2 class="text-white font-title text-5xl uppercase leading-tight tracking-tight mb-2">
+                    Haga realidad su<br>próximo proyecto
+                </h2>
+                <h3 class="text-[#FF6600] font-title text-3xl uppercase tracking-widest font-bold">
+                    Contáctenos hoy
+                </h3>
+            </div>
+
+            <!-- TARJETAS DE CONTACTO -->
+            <div class="flex flex-col gap-6 w-full max-w-md">
+                
+                <!-- Teléfono -->
+                <div class="bg-[#0A1120] border border-white/5 p-6 rounded-sm flex items-center gap-6 shadow-2xl">
+                    <div class="w-12 h-12 bg-[#FF6600]/10 rounded-full flex items-center justify-center text-[#FF6600]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[#FF6600] text-[10px] font-bold uppercase tracking-widest mb-1">Teléfono / WhatsApp</p>
+                        <p class="text-white text-2xl font-light">997 607 951</p>
+                    </div>
+                </div>
+
+                <!-- Correo -->
+                <div class="bg-[#0A1120] border border-white/5 p-6 rounded-sm flex items-center gap-6 shadow-2xl">
+                    <div class="w-12 h-12 bg-[#FF6600]/10 rounded-full flex items-center justify-center text-[#FF6600]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[#FF6600] text-[10px] font-bold uppercase tracking-widest mb-1">Correo Electrónico</p>
+                        <p class="text-white text-lg font-light">intailujan@gmail.com</p>
+                    </div>
+                </div>
+
+                <!-- Ubicación -->
+                <div class="bg-[#0A1120] border border-white/5 p-6 rounded-sm flex items-center gap-6 shadow-2xl">
+                    <div class="w-12 h-12 bg-[#FF6600]/10 rounded-full flex items-center justify-center text-[#FF6600]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[#FF6600] text-[10px] font-bold uppercase tracking-widest mb-1">Ubicación Central</p>
+                        <p class="text-white text-lg font-light leading-tight">Jr. Blondel 921, Cajabamba</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PIE DE PÁGINA -->
+        <div class="absolute bottom-0 left-0 w-full px-16 py-10">
+            <div class="w-full h-[1px] bg-white/10 mb-6"></div>
+            <div class="flex justify-between items-center text-[10px] text-white/30 uppercase tracking-[0.3em] font-medium">
+                <span>Intay Corporation SAC</span>
+                <span>Perú</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

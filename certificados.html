@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 3 - Calidad y Certificaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #040812;      /* Azul marino casi negro */
+            --orange-brand: #FF6600; /* Naranja industrial */
+            --steel-blue: #1C2D42;   /* Azul acero */
+        }
+
+        body { 
+            background-color: #f3f4f6; 
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-title { font-family: 'Oswald', sans-serif; }
+
+        /* Cuadrícula naranja fina para la caja central */
+        .industrial-grid-orange {
+            background-image: 
+                linear-gradient(rgba(255, 102, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 102, 0, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Gradiente de Azul Marino a Azul Acero */
+        .gradient-box {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--steel-blue) 100%);
+        }
+
+        .a4-container {
+            width: 794px;
+            aspect-ratio: 1 / 1.414;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-container flex flex-col">
+        
+        <!-- Franja Azul Marino Superior -->
+        <div class="h-[18%] bg-[var(--bg-dark)] px-14 pt-14 flex flex-col justify-center relative">
+            <!-- Número de página discreto -->
+            <div class="absolute right-14 top-14 opacity-20 text-white font-title text-4xl">02</div>
+            
+            <div class="relative z-10 flex items-center gap-3 mb-1">
+                <div class="w-8 h-[2px] bg-[#FF6600]"></div>
+                <span class="text-[#FF6600] font-title text-xl font-bold tracking-widest">02</span>
+            </div>
+            <h1 class="relative z-10 text-white font-title text-5xl uppercase tracking-tight leading-none">
+                Excelencia Técnica <span class="text-[#FF6600]">Comprobada</span>
+            </h1>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="flex-1 px-14 py-10 flex flex-col">
+            
+            <!-- CAJA CENTRAL: HOMOLOGACIÓN -->
+            <div class="gradient-box rounded-sm shadow-2xl relative overflow-hidden p-12 mb-10 group">
+                <!-- Cuadrícula naranja de fondo -->
+                <div class="absolute inset-0 industrial-grid-orange opacity-40"></div>
+                
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <h3 class="text-[#FF6600] font-title text-sm font-bold tracking-[0.5em] uppercase mb-4">
+                        Homologación de Soldadores
+                    </h3>
+                    
+                    <h2 class="font-title text-white text-[7rem] leading-none font-bold tracking-tighter mb-6">
+                        3G · <span class="text-[#FF6600]">4G</span> · 6G
+                    </h2>
+                    
+                    <p class="text-white/60 font-light text-base leading-relaxed max-w-xl">
+                        Contamos con personal certificado bajo estándares internacionales, garantizando que cada unión metálica soporte las cargas más exigentes en proyectos de infraestructura educativa e industrial.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TARJETAS DE POSICIÓN -->
+            <div class="grid grid-cols-3 gap-6 mb-12">
+                
+                <div class="border border-gray-200 bg-white p-6 relative shadow-sm">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-[#FF6600]"></div>
+                    <span class="block font-title text-[#FF6600] text-5xl font-bold mb-2">3G</span>
+                    <p class="text-[var(--bg-dark)] font-bold text-xs uppercase tracking-widest">Posición Vertical</p>
+                </div>
+
+                <div class="border border-gray-200 bg-white p-6 relative shadow-sm">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-[#FF6600]"></div>
+                    <span class="block font-title text-[#FF6600] text-5xl font-bold mb-2">4G</span>
+                    <p class="text-[var(--bg-dark)] font-bold text-xs uppercase tracking-widest">Posición Sobrecabeza</p>
+                </div>
+
+                <div class="border border-gray-200 bg-white p-6 relative shadow-sm">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-[#FF6600]"></div>
+                    <span class="block font-title text-[#FF6600] text-5xl font-bold mb-2">6G</span>
+                    <p class="text-[var(--bg-dark)] font-bold text-[10px] uppercase tracking-tighter leading-tight">La más exigente del mercado</p>
+                </div>
+
+            </div>
+
+            <!-- CUADRÍCULA 2x2 DE COMPROMISOS -->
+            <div class="grid grid-cols-2 gap-6 mt-auto">
+                
+                <!-- Garantía Estructural -->
+                <div class="bg-gray-50 p-6 flex items-center gap-5 rounded-sm border border-gray-100">
+                    <div class="w-12 h-12 flex-shrink-0 bg-white border border-gray-200 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-[#FF6600]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-title text-[var(--bg-dark)] text-lg uppercase leading-none mb-1">Garantía Estructural</h4>
+                        <p class="text-gray-500 text-[11px] font-medium">Cumplimiento estricto de normas AWS.</p>
+                    </div>
+                </div>
+
+                <!-- Seguridad en Obra -->
+                <div class="bg-gray-50 p-6 flex items-center gap-5 rounded-sm border border-gray-100">
+                    <div class="w-12 h-12 flex-shrink-0 bg-white border border-gray-200 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-[#FF6600]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-title text-[var(--bg-dark)] text-lg uppercase leading-none mb-1">Seguridad en Obra</h4>
+                        <p class="text-gray-500 text-[11px] font-medium">Protocolos SOMA de alto estándar.</p>
+                    </div>
+                </div>
+
+                <!-- Precisión Milimétrica -->
+                <div class="bg-gray-50 p-6 flex items-center gap-5 rounded-sm border border-gray-100">
+                    <div class="w-12 h-12 flex-shrink-0 bg-white border border-gray-200 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-[#FF6600]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 6l3 12h12l3-12H3z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 6v12M15 6v12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-title text-[var(--bg-dark)] text-lg uppercase leading-none mb-1">Precisión Milimétrica</h4>
+                        <p class="text-gray-500 text-[11px] font-medium">Cálculos estructurales computarizados.</p>
+                    </div>
+                </div>
+
+                <!-- Personal Capacitado -->
+                <div class="bg-gray-50 p-6 flex items-center gap-5 rounded-sm border border-gray-100">
+                    <div class="w-12 h-12 flex-shrink-0 bg-white border border-gray-200 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-[#FF6600]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-title text-[var(--bg-dark)] text-lg uppercase leading-none mb-1">Personal Capacitado</h4>
+                        <p class="text-gray-500 text-[11px] font-medium">Capacitación técnica constante.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Footer discreto -->
+        <div class="h-6 bg-[var(--steel-blue)] w-full"></div>
+    </div>
+
+</body>
+</html>

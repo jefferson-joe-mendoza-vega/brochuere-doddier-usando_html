@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 4 - Proyectos Destacados | INTAY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #040812;      /* Azul marino casi negro */
+            --orange-brand: #FF6600; /* Naranja industrial */
+            --steel-blue: #1C2D42;   /* Azul acero */
+        }
+
+        body { 
+            background-color: #f3f4f6; 
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-title { font-family: 'Oswald', sans-serif; }
+
+        .a4-container {
+            width: 794px;
+            aspect-ratio: 1 / 1.414;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Efecto de etiqueta en esquina */
+        .label-tag {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .a4-container { box-shadow: none; width: 210mm; height: 297mm; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-container flex flex-col">
+        
+        <!-- Franja Azul Marino Superior -->
+        <div class="h-[15%] bg-[var(--bg-dark)] px-14 flex flex-col justify-center relative">
+            <div class="relative z-10 flex items-center gap-3 mb-1">
+                <div class="w-8 h-[2px] bg-[#FF6600]"></div>
+                <span class="text-[#FF6600] font-title text-xl font-bold tracking-widest">03</span>
+            </div>
+            <h1 class="relative z-10 text-white font-title text-5xl uppercase tracking-tight leading-none">
+                Proyectos <span class="text-[#FF6600]">Destacados</span>
+            </h1>
+            <div class="absolute right-0 bottom-0 w-32 h-1 bg-[#FF6600]"></div>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="flex-1 px-14 py-10 flex flex-col">
+            
+            <!-- TARJETAS DE PROYECTOS -->
+            <div class="grid grid-cols-2 gap-8 mb-10">
+                
+                <!-- Tarjeta 1: Obra Educativa -->
+                <div class="border border-gray-100 shadow-lg overflow-hidden flex flex-col group">
+                    <div class="h-56 bg-[var(--bg-dark)] relative flex items-center justify-center overflow-hidden">
+                        <!-- Etiqueta Naranja -->
+                        <div class="absolute top-4 left-0 bg-[#FF6600] text-white text-[10px] font-bold px-4 py-1.5 label-tag z-10 tracking-widest uppercase">
+                            Obra Educativa
+                        </div>
+                        <!-- Icono / Placeholder de Imagen -->
+                        <div class="opacity-20 group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-32 h-32 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <!-- Texto de guía para el usuario -->
+                        <div class="absolute bottom-4 text-white/30 text-[10px] uppercase tracking-widest font-light">[ Foto Real del Colegio ]</div>
+                    </div>
+                    <div class="p-6 bg-white flex-1">
+                        <h3 class="font-title text-[var(--bg-dark)] text-xl uppercase mb-3 leading-tight font-bold">Techado Institución Educativa</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed">
+                            Diseño, fabricación y montaje de cobertura autoportante de grandes luces para patio principal, garantizando máxima seguridad para la comunidad escolar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Obra Industrial -->
+                <div class="border border-gray-100 shadow-lg overflow-hidden flex flex-col group">
+                    <div class="h-56 bg-[var(--bg-dark)] relative flex items-center justify-center overflow-hidden">
+                        <!-- Etiqueta Naranja -->
+                        <div class="absolute top-4 left-0 bg-[#FF6600] text-white text-[10px] font-bold px-4 py-1.5 label-tag z-10 tracking-widest uppercase">
+                            Obra Industrial
+                        </div>
+                        <!-- Icono / Placeholder de Imagen -->
+                        <div class="opacity-20 group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-32 h-32 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="absolute bottom-4 text-white/30 text-[10px] uppercase tracking-widest font-light">[ Foto Real de Nave Industrial ]</div>
+                    </div>
+                    <div class="p-6 bg-white flex-1">
+                        <h3 class="font-title text-[var(--bg-dark)] text-xl uppercase mb-3 leading-tight font-bold">Nave y Centro de Almacenamiento</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Estructura pesada con pórticos de alma llena, optimización de espacios y acabados industriales de alta durabilidad para sector logístico.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CAJA ANCHA: ESPECIALIDADES -->
+            <div class="bg-[var(--bg-dark)] p-10 rounded-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-5">
+                    <svg class="text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                
+                <h4 class="text-[#FF6600] font-title text-sm font-bold tracking-[0.4em] uppercase mb-8">Especialidad en Grandes Estructuras</h4>
+                
+                <ul class="grid grid-cols-1 gap-4">
+                    <li class="flex items-center gap-4 group">
+                        <div class="w-6 h-6 bg-[var(--steel-blue)] flex items-center justify-center rounded-sm group-hover:bg-[#FF6600] transition-colors">
+                            <svg class="w-3 h-3 text-[#FF6600] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="text-white text-sm font-light tracking-wide">Coberturas metálicas de grandes luces para coliseos y polideportivos.</span>
+                    </li>
+                    <li class="flex items-center gap-4 group">
+                        <div class="w-6 h-6 bg-[var(--steel-blue)] flex items-center justify-center rounded-sm group-hover:bg-[#FF6600] transition-colors">
+                            <svg class="w-3 h-3 text-[#FF6600] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="text-white text-sm font-light tracking-wide">Naves industriales y almacenes de alta resistencia estructural.</span>
+                    </li>
+                    <li class="flex items-center gap-4 group">
+                        <div class="w-6 h-6 bg-[var(--steel-blue)] flex items-center justify-center rounded-sm group-hover:bg-[#FF6600] transition-colors">
+                            <svg class="w-3 h-3 text-[#FF6600] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="text-white text-sm font-light tracking-wide">Sistemas de cerramientos y coberturas especiales con aislación térmica.</span>
+                    </li>
+                    <li class="flex items-center gap-4 group">
+                        <div class="w-6 h-6 bg-[var(--steel-blue)] flex items-center justify-center rounded-sm group-hover:bg-[#FF6600] transition-colors">
+                            <svg class="w-3 h-3 text-[#FF6600] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="text-white text-sm font-light tracking-wide">Montaje de estructuras pesadas para el sector minero e industrial.</span>
+                    </li>
+                    <li class="flex items-center gap-4 group">
+                        <div class="w-6 h-6 bg-[var(--steel-blue)] flex items-center justify-center rounded-sm group-hover:bg-[#FF6600] transition-colors">
+                            <svg class="w-3 h-3 text-[#FF6600] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="text-white text-sm font-light tracking-wide">Ingeniería aplicada al diseño sismo-resistente de estructuras.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- FRANJA LLAVE EN MANO -->
+            <div class="mt-auto bg-orange-50 border border-orange-100 p-5 rounded-sm flex items-center gap-5">
+                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                    <h5 class="text-[var(--bg-dark)] font-bold text-sm uppercase leading-none mb-1">Proyectos Llave en Mano</h5>
+                    <p class="text-gray-500 text-[11px] font-medium leading-tight italic">
+                        Nos encargamos de todo el proceso: desde el diseño y planos de ingeniería, hasta la fabricación y el montaje final con personal certificado.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer discreto -->
+        <div class="h-6 bg-[var(--steel-blue)] w-full"></div>
+    </div>
+
+</body>
+</html>

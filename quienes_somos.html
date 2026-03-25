@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2 - Quiénes Somos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #040812;
+            --orange-brand: #FF6600;
+            --orange-light: #FFB366; /* Naranja claro para resaltar texto sobre fondo oscuro */
+            --steel-blue: #1C2D42;
+        }
+
+        body { 
+            background-color: #e5e7eb; /* Fondo gris externo para que resalte la hoja blanca */
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-title { font-family: 'Oswald', sans-serif; }
+    </style>
+</head>
+<body>
+
+    <div class="relative w-full max-w-[794px] aspect-[1/1.414] bg-white shadow-2xl overflow-hidden flex flex-col">
+        
+        <div class="h-[20%] bg-[var(--bg-dark)] px-14 pt-16 flex flex-col justify-center relative">
+            <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <div class="relative z-10 flex items-center gap-3 mb-2">
+                <div class="w-8 h-[2px] bg-[#FF6600]"></div>
+                <span class="text-[#FF6600] font-title text-xl font-bold tracking-widest">01</span>
+            </div>
+            <h1 class="relative z-10 text-white font-title text-6xl uppercase tracking-tight leading-none">
+                Quiénes Somos
+            </h1>
+        </div>
+
+        <div class="flex-1 px-14 py-10 flex flex-col">
+            
+            <div class="bg-[var(--steel-blue)] border-l-[6px] border-[#FF6600] p-8 shadow-md mb-10">
+                <p class="text-white font-light text-lg leading-relaxed text-justify">
+                    Somos una empresa orgullosamente cajabambina con más de <span class="text-[var(--orange-light)] font-semibold">5 años de sólida experiencia</span> en el rubro metalmecánico. En INTAY CORPORATION SAC, nos especializamos en la ejecución de obras de alta exigencia, transformando el acero en estructuras seguras, eficientes y duraderas para el sector educativo, industrial y minero.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 mb-10">
+                
+                <div class="bg-gray-100 border-t-4 border-[#FF6600] p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <svg class="w-10 h-10 text-[#FF6600] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    
+                    <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase tracking-wider mb-3">Nuestra Misión</h3>
+                    <p class="text-gray-700 font-light text-sm leading-relaxed text-justify">
+                        Brindar soluciones metalmecánicas integrales de la más alta calidad, cumpliendo con los plazos establecidos y superando las expectativas de nuestros clientes, garantizando siempre la seguridad estructural en cada proyecto.
+                    </p>
+                </div>
+
+                <div class="bg-gray-100 border-t-4 border-[#FF6600] p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <svg class="w-10 h-10 text-[#FF6600] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    
+                    <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase tracking-wider mb-3">Nuestra Visión</h3>
+                    <p class="text-gray-700 font-light text-sm leading-relaxed text-justify">
+                        Consolidarnos como la empresa metalmecánica líder a nivel regional y nacional, reconocidos por nuestra capacidad técnica, innovación constante y compromiso inquebrantable con la excelencia operativa.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center mb-10 opacity-70">
+                <div class="h-px bg-gray-300 flex-1"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-[#FF6600] mx-4"></div>
+                <div class="h-px bg-gray-300 flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6 mt-auto">
+                
+                <div class="bg-gray-50 border border-gray-200 p-6 flex flex-col items-center justify-center text-center">
+                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2">+5</span>
+                    <span class="text-[var(--bg-dark)] text-xs font-semibold uppercase tracking-widest">Años de Experiencia</span>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-200 p-6 flex flex-col items-center justify-center text-center">
+                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2">3</span>
+                    <span class="text-[var(--bg-dark)] text-xs font-semibold uppercase tracking-widest">Sectores Atendidos</span>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-200 p-6 flex flex-col items-center justify-center text-center">
+                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2">100%</span>
+                    <span class="text-[var(--bg-dark)] text-xs font-semibold uppercase tracking-widest">Calidad Garantizada</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
