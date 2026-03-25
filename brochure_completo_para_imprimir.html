@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brochure Completo - INTAY CORPORATION</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #040812;      
+            --orange-brand: #FF6600; 
+            --steel-blue: #1C2D42;   
+        }
+        body { 
+            background-color: #f3f4f6; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-title { font-family: 'Oswald', sans-serif; }
+        .a4-container {
+            width: 794px;
+            height: 1123px; /* Reemplaza aspect-ratio para evitar el bug de colapso en PDF */
+            background-color: white; /* Por defecto */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+        
+        /* Portada Específicos */
+        .industrial-grid {
+            background-color: #040812 !important;
+            background-image: 
+                linear-gradient(rgba(255, 102, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 102, 0, 0.04) 1px, transparent 1px);
+            background-size: 25px 25px;
+        }
+        .steel-triangle {
+            position: absolute; bottom: 0; right: 0; width: 60%; height: 45%;
+            background-color: var(--steel-blue); clip-path: polygon(100% 0, 100% 100%, 0 100%); opacity: 0.8; z-index: 1;
+        }
+        .logo-decoration { position: absolute; border: 2px solid rgba(255, 102, 0, 0.3); border-radius: 50%; }
+        .decoration-ring-1 { width: 420px; height: 420px; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: spin 30s linear infinite reverse; }
+        .decoration-ring-2 { width: 500px; height: 500px; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid rgba(255, 102, 0, 0.2); animation: spin 40s linear infinite; }
+        .decoration-corner-top-left { width: 120px; height: 120px; border-right: 3px solid var(--orange-brand); border-bottom: 3px solid var(--orange-brand); opacity: 0.4; }
+        .decoration-corner-bottom-right { width: 80px; height: 80px; border-left: 3px solid var(--orange-brand); border-top: 3px solid var(--orange-brand); opacity: 0.4; }
+        @keyframes spin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+        /* Varios Generales */
+        .triangle-orange { width: 0; height: 0; }
+        .pattern-bg {
+            position: absolute; inset: 0;
+            background-image: 
+                linear-gradient(rgba(28, 45, 66, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(28, 45, 66, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .label-tag { clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%); }
+        .industrial-grid-orange {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(255, 102, 0, 0.01) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 102, 0, 0.01) 1px, transparent 1px);
+            background-size: 30px 30px; z-index: 1;
+        }
+        .octagon { clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%); }
+
+        /* Fix para Contacto */
+        .contacto-fix {
+            align-items: center !important;
+            justify-content: center !important;
+            background-color: #0e1e35 !important;
+        }
+
+        /* MAGIA PARA PDF EXACTO */
+        @page {
+            size: 794px 1123px; /* Forzamos tamaño de página exacto en píxeles (A4 a 96DPI) */
+            margin: 0;
+        }
+        @media print {
+            html, body { 
+                display: block !important; /* FACTOR CRÍTICO: Si el body es flex, el PDF se rompe y los page-breaks se ignoran */
+                background: white; 
+                padding: 0 !important; 
+                margin: 0 !important; 
+                width: 100% !important;
+                height: auto !important; /* body height auto para que el contenido sea el que empuje */
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .a4-container { 
+                box-shadow: none !important; 
+                page-break-after: always !important;
+                page-break-inside: avoid !important;
+                margin: 0 !important;
+                border: none !important;
+                
+                /* EL FIX CLAVE: Dimensiones precisas absolutas en píxeles igual que en pantalla */
+                width: 794px !important;
+                height: 1123px !important;
+                min-height: 1123px !important;
+                max-height: 1123px !important;
+                position: relative !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- ======= INICIO DE PORTADA.HTML ======= -->
+<div class="a4-container relative w-full max-w-[794px] h-[1123px] industrial-grid shadow-2xl overflow-hidden border border-gray-800">
+        
+        <div class="absolute top-0 left-0 w-full h-2 bg-[#FF6600] z-20"></div>
+
+        <div class="absolute -top-20 left-0 flex items-center justify-center gap-4 z-20" style="width: 400px; height: 400px;">
+            <!-- Anillos decorativos giratorios -->
+            <div class="logo-decoration decoration-ring-1"></div>
+            <div class="logo-decoration decoration-ring-2"></div>
+            
+            <!-- Logo central -->
+            <img src="logo.jpeg" alt="INTAY CORPORATION" class="w-80 h-80 object-contain absolute z-30 drop-shadow-2xl">
+            
+
+            <!-- Esquina decorativa superior izquierda -->
+            <div class="decoration-corner-top-left absolute -top-4 -left-4"></div>
+            
+            <!-- Esquina decorativa inferior derecha -->
+            <div class="decoration-corner-bottom-right absolute -bottom-4 -right-4"></div>
+        </div>
+
+        <div class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-[500px] h-[300px]">
+            <img src="imagenes/portada/image.png" alt="Trabajo en construcción" class="w-full h-full object-cover rounded-lg shadow-2xl">
+        </div>
+
+        <div class="steel-triangle"></div>
+
+        <div class="absolute bottom-16 left-10 z-20 max-w-[80%]">
+            
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-[2px] bg-[#FF6600]"></div>
+                <h3 class="text-[#FF6600] text-sm font-semibold tracking-[0.3em] uppercase">Dossier Corporativo 2026</h3>
+            </div>
+
+            <h1 class="font-title text-[4.5rem] text-white leading-[0.95] mb-6 uppercase tracking-tight">
+                Estructuras Metálicas<br>
+                <span class="text-gray-300">De</span> <span class="text-[#FF6600]">Alta Ingeniería</span>
+            </h1>
+
+            <p class="text-white/60 text-lg max-w-lg mb-10 font-light leading-relaxed">
+                Soluciones integrales de soldadura, fabricación y montaje industrial con los más altos estándares de calidad y seguridad para el sector minero.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+                <div class="border border-[#FF6600] bg-[#FF6600]/10 px-5 py-2">
+                    <span class="text-white text-xs font-semibold tracking-widest uppercase">Personal Calificado</span>
+                </div>
+                <div class="border border-[#FF6600] bg-[#FF6600]/10 px-5 py-2">
+                    <span class="text-white text-xs font-semibold tracking-widest uppercase">Empresa Cajabambina</span>
+                </div>
+                <div class="border border-[#FF6600] bg-[#FF6600]/10 px-5 py-2">
+                    <span class="text-white text-xs font-semibold tracking-widest uppercase">3 Años de Experiencia</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-16 right-10 z-20 flex flex-col items-end">
+            <div class="text-[#FF6600] font-title text-8xl font-bold leading-none">
+                +3
+            </div>
+            <div class="text-white text-xs font-semibold tracking-widest uppercase mt-2">Años de<br>Experiencia</div>
+        </div>
+
+    </div>
+<!-- ======= FIN DE PORTADA.HTML ======= -->
+
+<!-- ======= INICIO DE QUIENES_SOMOS.HTML ======= -->
+<div class="a4-container relative w-full max-w-[794px] h-[1123px] bg-white shadow-2xl overflow-hidden flex flex-col">
+        
+        <!-- Patrón de fondo decorativo -->
+        <div class="pattern-bg"></div>
+
+        <!-- Triángulo decorativo en esquina inferior izquierda -->
+        <div class="absolute bottom-0 left-0 triangle-orange" style="border-left: 120px solid transparent; border-bottom: 120px solid var(--orange-brand);"></div>
+
+        <!-- Línea decorativa horizontal -->
+        <div class="absolute bottom-40 left-0 w-32 h-1 line-decoration" style="background: linear-gradient(90deg, var(--orange-brand), transparent);"></div>
+        
+        <div class="h-[20%] bg-[var(--bg-dark)] px-14 pt-16 flex flex-col justify-center relative">
+            <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <img src="logo.jpeg" alt="INTAY CORPORATION" class="absolute top-2 right-4 w-60 object-contain z-20" style="height:auto; max-height:120px;">
+            
+            <div class="relative z-10 flex items-center gap-3 mb-2">
+                <div class="w-8 h-[2px] bg-[#FF6600]"></div>
+                <span class="text-[#FF6600] font-title text-xl font-bold tracking-widest">01</span>
+            </div>
+            <h1 class="relative z-10 text-white font-title text-6xl uppercase tracking-tight leading-none">
+                Quiénes Somos
+            </h1>
+        </div>
+
+        <div class="flex-1 px-14 py-10 flex flex-col relative z-10">
+            
+            <div class="bg-[var(--steel-blue)] border-l-[6px] border-[#FF6600] p-8 shadow-md mb-10 relative overflow-hidden group">
+                <!-- Efecto geométrico decorativo -->
+                <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#FF6600]/10 to-transparent rounded-full blur-3xl group-hover:scale-125 transition-transform duration-500"></div>
+                <div class="absolute bottom-0 right-20 w-1 h-32 bg-gradient-to-t from-[#FF6600]/20 to-transparent"></div>
+                
+                <p class="text-white font-light text-xl leading-relaxed text-justify relative z-10">
+                    Somos una empresa orgullosamente cajabambina con más de <span class="text-[var(--orange-light)] font-semibold">3 años de sólida experiencia</span> en el rubro metalmecánico. En INTAY CORPORATION SAC, nos especializamos en la ejecución de obras de alta exigencia, transformando el acero en estructuras seguras, eficientes y duraderas para el sector educativo, industrial y minero.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 mb-10 relative z-10">
+
+                <!-- TARJETA MISIÓN -->
+                <div class="bg-white border border-gray-200 shadow-lg relative overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-top: 4px solid #FF6600;">
+                    <!-- Fondo geométrico SVG -->
+                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Hexágono grande decorativo fondo -->
+                        <polygon points="240,10 290,45 290,115 240,150 190,115 190,45" fill="none" stroke="rgba(255,102,0,0.07)" stroke-width="1.5"/>
+                        <polygon points="250,20 285,50 285,110 250,140 215,110 215,50" fill="none" stroke="rgba(255,102,0,0.05)" stroke-width="1"/>
+                        <!-- Líneas diagonales industriales -->
+                        <line x1="0" y1="220" x2="80" y2="120" stroke="rgba(255,102,0,0.06)" stroke-width="1.5"/>
+                        <line x1="0" y1="200" x2="60" y2="120" stroke="rgba(255,102,0,0.04)" stroke-width="1"/>
+                        <!-- Cuadrado esquina inferior derecha -->
+                        <rect x="220" y="160" width="50" height="50" fill="none" stroke="rgba(28,45,66,0.08)" stroke-width="1.5" transform="rotate(15, 245, 185)"/>
+                        <!-- Punto acento -->
+                        <circle cx="280" cy="30" r="3" fill="rgba(255,102,0,0.15)"/>
+                        <circle cx="270" cy="30" r="1.5" fill="rgba(255,102,0,0.1)"/>
+                    </svg>
+                    <!-- Franja lateral izquierda naranja -->
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#FF6600] to-[#FF6600]/20"></div>
+                    <!-- Esquina decorativa superior derecha -->
+                    <div class="absolute top-0 right-0 w-0 h-0" style="border-top: 28px solid #FF6600; border-left: 28px solid transparent; opacity:0.15;"></div>
+
+                    <div class="relative z-10 p-8">
+                        <!-- Icono diana / target -->
+                        <div class="w-12 h-12 mb-4 relative">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-12 h-12">
+                                <!-- Círculo exterior -->
+                                <circle cx="24" cy="24" r="21" stroke="#FF6600" stroke-width="2" opacity="0.3"/>
+                                <!-- Círculo medio -->
+                                <circle cx="24" cy="24" r="14" stroke="#FF6600" stroke-width="2" opacity="0.6"/>
+                                <!-- Círculo interior -->
+                                <circle cx="24" cy="24" r="7" stroke="#FF6600" stroke-width="2"/>
+                                <!-- Centro sólido -->
+                                <circle cx="24" cy="24" r="3" fill="#FF6600"/>
+                                <!-- Flecha diagonal -->
+                                <line x1="34" y1="8" x2="26" y2="21" stroke="#FF6600" stroke-width="2.5" stroke-linecap="round"/>
+                                <!-- Punta de flecha -->
+                                <polyline points="26,21 27,16 32,18" fill="#FF6600" stroke="#FF6600" stroke-width="1" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase tracking-wider mb-3">Nuestra Misión</h3>
+                        <p class="text-gray-600 font-light text-base leading-relaxed text-justify">
+                            Brindar soluciones metalmecánicas integrales de la más alta calidad, cumpliendo con los plazos establecidos y superando las expectativas de nuestros clientes, garantizando siempre la seguridad estructural en cada proyecto.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TARJETA VISIÓN -->
+                <div class="bg-white border border-gray-200 shadow-lg relative overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-top: 4px solid #FF6600;">
+                    <!-- Fondo geométrico SVG -->
+                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Triángulo grande fondo -->
+                        <polygon points="300,0 300,120 180,0" fill="rgba(255,102,0,0.04)"/>
+                        <!-- Líneas de cuadrícula técnica -->
+                        <line x1="160" y1="0" x2="300" y2="140" stroke="rgba(28,45,66,0.05)" stroke-width="1"/>
+                        <line x1="200" y1="0" x2="300" y2="100" stroke="rgba(28,45,66,0.04)" stroke-width="1"/>
+                        <!-- Hexágono esquina inferior izquierda -->
+                        <polygon points="10,180 40,165 70,180 70,210 40,225 10,210" fill="none" stroke="rgba(255,102,0,0.07)" stroke-width="1.5"/>
+                        <!-- Cruz técnica -->
+                        <line x1="255" y1="170" x2="295" y2="170" stroke="rgba(255,102,0,0.1)" stroke-width="1"/>
+                        <line x1="275" y1="150" x2="275" y2="190" stroke="rgba(255,102,0,0.1)" stroke-width="1"/>
+                        <!-- Punto acento -->
+                        <circle cx="20" cy="20" r="3" fill="rgba(255,102,0,0.15)"/>
+                        <circle cx="30" cy="20" r="1.5" fill="rgba(255,102,0,0.1)"/>
+                    </svg>
+                    <!-- Franja lateral izquierda naranja -->
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#FF6600] to-[#FF6600]/20"></div>
+                    <!-- Esquina decorativa superior derecha -->
+                    <div class="absolute top-0 right-0 w-0 h-0" style="border-top: 28px solid #FF6600; border-left: 28px solid transparent; opacity:0.15;"></div>
+
+                    <div class="relative z-10 p-8">
+                        <!-- Icono Visión: telescopio / ojo técnico -->
+                        <div class="w-12 h-12 mb-4 relative">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-12 h-12">
+                                <!-- Ojo exterior -->
+                                <path d="M4 24 C10 12, 38 12, 44 24 C38 36, 10 36, 4 24 Z" stroke="#FF6600" stroke-width="2" opacity="0.4" fill="none"/>
+                                <!-- Ojo interior más definido -->
+                                <path d="M10 24 C16 15, 32 15, 38 24 C32 33, 16 33, 10 24 Z" stroke="#FF6600" stroke-width="2" fill="none"/>
+                                <!-- Iris -->
+                                <circle cx="24" cy="24" r="6" stroke="#FF6600" stroke-width="2"/>
+                                <!-- Pupila -->
+                                <circle cx="24" cy="24" r="2.5" fill="#FF6600"/>
+                                <!-- Rayos de visión -->
+                                <line x1="24" y1="4" x2="24" y2="10" stroke="#FF6600" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                                <line x1="38" y1="10" x2="34" y2="14" stroke="#FF6600" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                                <line x1="10" y1="10" x2="14" y2="14" stroke="#FF6600" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase tracking-wider mb-3">Nuestra Visión</h3>
+                        <p class="text-gray-600 font-light text-base leading-relaxed text-justify">
+                            Consolidarnos como la empresa metalmecánica líder a nivel regional y nacional, reconocidos por nuestra capacidad técnica, innovación constante y compromiso inquebrantable con la excelencia operativa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center mb-10 opacity-70 relative z-10">
+                <div class="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent flex-1"></div>
+                <div class="w-3 h-3 rounded-full bg-[#FF6600] mx-4 shadow-md"></div>
+                <div class="w-2 h-2 rounded-full bg-[#FF6600]/50 mx-2"></div>
+                <div class="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6 mt-4 relative z-10">
+                
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-[#FF6600]/30 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group hover:border-[#FF6600] transition-colors">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#FF6600]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2 relative z-10">+3</span>
+                    <span class="text-[var(--bg-dark)] text-sm font-semibold uppercase tracking-widest relative z-10">Años de Experiencia</span>
+                </div>
+
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-[#FF6600]/30 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group hover:border-[#FF6600] transition-colors">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#FF6600]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2 relative z-10">3</span>
+                    <span class="text-[var(--bg-dark)] text-sm font-semibold uppercase tracking-widest relative z-10">Sectores Atendidos</span>
+                </div>
+
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-[#FF6600]/30 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group hover:border-[#FF6600] transition-colors">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#FF6600]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="font-title text-5xl text-[#FF6600] font-bold leading-none mb-2 relative z-10">100%</span>
+                    <span class="text-[var(--bg-dark)] text-sm font-semibold uppercase tracking-widest relative z-10">Calidad Garantizada</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+<!-- ======= FIN DE QUIENES_SOMOS.HTML ======= -->
+
+<!-- ======= INICIO DE CERTIFICADOS.HTML ======= -->
+<div class="a4-container">
+
+        <!-- CABECERA OSCURA -->
+        <div class="h-[15%] bg-[var(--bg-dark)] px-12 flex flex-col justify-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 22px 22px;"></div>
+            <div class="absolute right-0 top-0 bottom-0" style="width:160px; background: linear-gradient(135deg, transparent 50%, rgba(255,102,0,0.08) 50%);"></div>
+            <div class="relative z-10 flex items-center gap-3 mb-1">
+                <div class="w-8 h-[2px] bg-[#FF6600]"></div>
+                <span class="text-[#FF6600] font-title text-xl font-bold tracking-widest">02</span>
+            </div>
+            <h1 class="relative z-10 text-white font-title text-5xl uppercase tracking-tight leading-none">
+                Excelencia Técnica <span class="text-[#FF6600]">Comprobada</span>
+            </h1>
+            <div class="absolute right-0 bottom-0 w-32 h-1 bg-[#FF6600]"></div>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="flex-1 px-12 py-6 flex flex-col justify-between">
+
+            <!-- BLOQUE TÍTULO -->
+            <div class="flex items-center gap-4">
+                <div class="w-1 self-stretch bg-gradient-to-b from-[#FF6600] to-[#FF6600]/20 rounded-full flex-shrink-0"></div>
+                <div>
+                    <h2 class="font-title text-[var(--bg-dark)] text-2xl uppercase tracking-wider leading-none mb-1">
+                        Homologación de Personal Calificado
+                    </h2>
+                    <p class="text-gray-500 text-sm font-medium tracking-widest uppercase">Certificaciones Internacionales de Soldadura · Posiciones 3G · 4G · 6G</p>
+                </div>
+            </div>
+
+            <!-- TRES TARJETAS DE CERTIFICADOS -->
+            <div class="grid grid-cols-3 gap-4">
+
+                <!-- Certificado 1: 3G -->
+                <div class="flex flex-col group shadow-md" style="border: 2px solid #e5e7eb;">
+                    <!-- Imagen -->
+                    <div class="relative overflow-hidden" style="height: 180px;">
+                        <div class="absolute top-0 left-0 z-10 pointer-events-none">
+                            <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="0,36 0,0 36,0" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.7"/></svg>
+                        </div>
+                        <div class="absolute bottom-0 right-0 z-10 pointer-events-none">
+                            <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="36,0 36,36 0,36" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.7"/></svg>
+                        </div>
+                        <img src="imagenes/certificados/image.png" alt="Certificado 3G"
+                             class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <!-- Cuerpo tarjeta -->
+                    <div class="flex flex-col flex-1 bg-white px-4 pt-3 pb-4 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 opacity-[0.04]" style="width:60px;height:60px;">
+                            <svg viewBox="0 0 60 60"><polygon points="60,0 60,60 0,60" fill="#040812"/></svg>
+                        </div>
+                        <div class="w-7 h-0.5 bg-[#FF6600] mb-2"></div>
+                        <div class="flex items-baseline gap-2 mb-1">
+                            <span class="font-title text-[#FF6600] text-3xl font-bold leading-none">3G</span>
+                            <span class="font-title text-[var(--bg-dark)] text-base uppercase tracking-widest">Vertical</span>
+                        </div>
+                        <p class="text-gray-500 text-[13px] leading-relaxed mb-3">Dominio del depósito controlado y manejo de gravedad en cordones de relleno y presentación en posición vertical.</p>
+                        <div class="mt-auto inline-flex items-center gap-1.5 self-start px-2 py-1 bg-gray-50" style="border:1px solid #e5e7eb;">
+                            <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-[var(--bg-dark)]">AWS D1.1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificado 2: 4G -->
+                <div class="flex flex-col group shadow-md" style="border: 2px solid #e5e7eb;">
+                    <div class="relative overflow-hidden" style="height: 180px;">
+                        <div class="absolute top-0 left-0 z-10 pointer-events-none">
+                            <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="0,36 0,0 36,0" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.7"/></svg>
+                        </div>
+                        <div class="absolute bottom-0 right-0 z-10 pointer-events-none">
+                            <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="36,0 36,36 0,36" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.7"/></svg>
+                        </div>
+                        <img src="imagenes/certificados/image copy.png" alt="Certificado 4G"
+                             class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col flex-1 bg-white px-4 pt-3 pb-4 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 opacity-[0.04]" style="width:60px;height:60px;">
+                            <svg viewBox="0 0 60 60"><polygon points="60,0 60,60 0,60" fill="#040812"/></svg>
+                        </div>
+                        <div class="w-7 h-0.5 bg-[#FF6600] mb-2"></div>
+                        <div class="flex items-baseline gap-2 mb-1">
+                            <span class="font-title text-[#FF6600] text-3xl font-bold leading-none">4G</span>
+                            <span class="font-title text-[var(--bg-dark)] text-base uppercase tracking-widest">Sobrecabeza</span>
+                        </div>
+                        <p class="text-gray-500 text-[13px] leading-relaxed mb-3">Alta exigencia física y técnica para garantizar fusión total trabajando contra la gravedad en posición superior.</p>
+                        <div class="mt-auto inline-flex items-center gap-1.5 self-start px-2 py-1 bg-gray-50" style="border:1px solid #e5e7eb;">
+                            <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></div>
+                            <span class="text-[8px] font-bold uppercase tracking-widest text-[var(--bg-dark)]">AWS D1.1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificado 3: 6G -->
+                <div class="flex flex-col group shadow-md" style="border: 2px solid #e5e7eb;">
+                    <div class="relative overflow-hidden" style="height: 180px;">
+                        <div class="absolute top-0 left-0 z-10 pointer-events-none">
+                            <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="0,36 0,0 36,0" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.7"/></svg>
+                        </div>
+                        <div class="absolute bottom-0 right-0 z-10 pointer-events-none">
+                            <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="36,0 36,36 0,36" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.7"/></svg>
+                        </div>
+                        <img src="imagenes/certificados/image copy 2.png" alt="Certificado 6G"
+                             class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col flex-1 bg-white px-4 pt-3 pb-4 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 opacity-[0.04]" style="width:60px;height:60px;">
+                            <svg viewBox="0 0 60 60"><polygon points="60,0 60,60 0,60" fill="#040812"/></svg>
+                        </div>
+                        <div class="w-7 h-0.5 bg-[#FF6600] mb-2"></div>
+                        <div class="flex items-baseline gap-2 mb-1">
+                            <span class="font-title text-[#FF6600] text-3xl font-bold leading-none">6G</span>
+                            <span class="font-title text-[var(--bg-dark)] text-base uppercase tracking-widest">Alta Exigencia</span>
+                        </div>
+                        <p class="text-gray-500 text-[13px] leading-relaxed mb-3">La más exigente del mercado. Combina todas las posiciones en tubo inclinado a 45°, estándar internacional.</p>
+                        <div class="mt-auto inline-flex items-center gap-1.5 self-start px-2 py-1 bg-gray-50" style="border:1px solid #e5e7eb;">
+                            <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></div>
+                            <span class="text-[8px] font-bold uppercase tracking-widest text-[var(--bg-dark)]">AWS D1.1</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SEPARADOR GEOMÉTRICO -->
+            <div class="flex items-center gap-3">
+                <div class="h-px bg-gradient-to-r from-[#FF6600] to-transparent flex-1"></div>
+                <svg width="14" height="14" viewBox="0 0 18 18"><polygon points="9,0 18,9 9,18 0,9" fill="#FF6600" opacity="0.5"/></svg>
+                <div class="h-px bg-gradient-to-l from-[#FF6600] to-transparent flex-1"></div>
+            </div>
+
+            <!-- BLOQUES DE COMPROMISOS 2x2 -->
+            <div class="grid grid-cols-2 gap-3">
+
+                <!-- Garantía Estructural -->
+                <div class="flex items-center gap-4 p-4 relative overflow-hidden" style="border: 1px solid #e5e7eb; background: #fafafa;">
+                    <svg class="absolute right-0 top-0 h-full opacity-[0.04]" viewBox="0 0 80 80" preserveAspectRatio="xMaxYMid slice"><polygon points="80,0 80,80 0,80" fill="#040812"/><polygon points="80,0 80,60 20,0" fill="#FF6600"/></svg>
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center relative z-10" style="background: var(--bg-dark);">
+                        <svg class="w-5 h-5" fill="none" stroke="#FF6600" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-title text-[var(--bg-dark)] text-base uppercase leading-none mb-0.5">Garantía Estructural</h4>
+                        <p class="text-gray-500 text-[13px]">Cumplimiento estricto de normas AWS D1.1</p>
+                    </div>
+                </div>
+
+                <!-- Seguridad en Obra -->
+                <div class="flex items-center gap-4 p-4 relative overflow-hidden" style="border: 1px solid #e5e7eb; background: #fafafa;">
+                    <svg class="absolute right-0 top-0 h-full opacity-[0.04]" viewBox="0 0 80 80" preserveAspectRatio="xMaxYMid slice"><polygon points="80,0 80,80 0,80" fill="#040812"/><polygon points="80,0 80,60 20,0" fill="#FF6600"/></svg>
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center relative z-10" style="background: var(--bg-dark);">
+                        <svg class="w-5 h-5" fill="none" stroke="#FF6600" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-title text-[var(--bg-dark)] text-base uppercase leading-none mb-0.5">Seguridad en Obra</h4>
+                        <p class="text-gray-500 text-[13px]">Protocolos SOMA de alto estándar</p>
+                    </div>
+                </div>
+
+                <!-- Precisión Milimétrica -->
+                <div class="flex items-center gap-4 p-4 relative overflow-hidden" style="border: 1px solid #e5e7eb; background: #fafafa;">
+                    <svg class="absolute right-0 top-0 h-full opacity-[0.04]" viewBox="0 0 80 80" preserveAspectRatio="xMaxYMid slice"><polygon points="80,0 80,80 0,80" fill="#040812"/><polygon points="80,0 80,60 20,0" fill="#FF6600"/></svg>
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center relative z-10" style="background: var(--bg-dark);">
+                        <svg class="w-5 h-5" fill="none" stroke="#FF6600" viewBox="0 0 24 24"><path d="M9 7H7a2 2 0 00-2 2v9a2 2 0 002 2h10a2 2 0 002-2V9a2 2 0 00-2-2h-2M9 7a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-title text-[var(--bg-dark)] text-base uppercase leading-none mb-0.5">Precisión Milimétrica</h4>
+                        <p class="text-gray-500 text-[11px]">Cálculos estructurales computarizados</p>
+                    </div>
+                </div>
+
+                <!-- Personal Capacitado -->
+                <div class="flex items-center gap-4 p-4 relative overflow-hidden" style="border: 1px solid #e5e7eb; background: #fafafa;">
+                    <svg class="absolute right-0 top-0 h-full opacity-[0.04]" viewBox="0 0 80 80" preserveAspectRatio="xMaxYMid slice"><polygon points="80,0 80,80 0,80" fill="#040812"/><polygon points="80,0 80,60 20,0" fill="#FF6600"/></svg>
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center relative z-10" style="background: var(--bg-dark);">
+                        <svg class="w-5 h-5" fill="none" stroke="#FF6600" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-title text-[var(--bg-dark)] text-base uppercase leading-none mb-0.5">Personal Capacitado</h4>
+                        <p class="text-gray-500 text-[11px]">Capacitación técnica constante</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="h-6 bg-[var(--steel-blue)] w-full"></div>
+    </div>
+<!-- ======= FIN DE CERTIFICADOS.HTML ======= -->
+
+<!-- ======= INICIO DE PROYECTOS_DESTACADOS.HTML ======= -->
+<div class="a4-container flex flex-col">
+
+        <!-- Franja Azul Marino Superior -->
+        <div class="h-[15%] bg-[var(--bg-dark)] px-14 flex flex-col justify-center relative">
+            <img src="logo.jpeg" alt="INTAY CORPORATION" class="absolute top-2 right-4 w-60 object-contain z-20" style="height:auto; max-height:120px;">
+            <div class="relative z-10 flex items-center gap-3 mb-1">
+                <div class="w-8 h-[2px] bg-[#FF6600]"></div>
+                <span class="text-[#FF6600] font-title text-xl font-bold tracking-widest">03</span>
+            </div>
+            <h1 class="relative z-10 text-white font-title text-5xl uppercase tracking-tight leading-none">
+                Proyectos <span class="text-[#FF6600]">Destacados</span>
+            </h1>
+            <div class="absolute right-0 bottom-0 w-32 h-1 bg-[#FF6600]"></div>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="flex-1 px-14 py-8 flex flex-col justify-between gap-6">
+
+            <!-- TARJETA 1: Obra Educativa — foto principal -->
+            <div class="flex group shadow-md overflow-hidden border border-gray-100" style="height: 160px;">
+                <div class="relative flex-shrink-0 overflow-hidden" style="width: 50%;">
+                    <img src="imagenes/proyectos/image.png" alt="Techado Institución Educativa"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute top-3 left-0 bg-[#FF6600] text-white text-[10px] font-bold px-4 py-1.5 tracking-widest uppercase label-tag z-10">
+                        Obra Educativa
+                    </div>
+                </div>
+                <div class="flex-1 bg-white px-8 py-6 flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-[0.04]" style="width:100px;height:100px;">
+                        <svg viewBox="0 0 80 80"><polygon points="80,0 80,80 0,80" fill="#040812"/></svg>
+                    </div>
+                    <div class="w-8 h-0.5 bg-[#FF6600] mb-3"></div>
+                    <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase leading-tight font-bold mb-2">
+                        Techado Institución Educativa
+                    </h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">
+                       Fabricacion y montaje de techo para jardin Jardin moyan bajo - Cachachi Cajabamba. 
+                    </p>
+                </div>
+            </div>
+
+            <!-- TARJETA 1b: Segunda vista del mismo proyecto educativo -->
+            <div class="flex group shadow-md overflow-hidden border border-gray-100" style="height: 160px;">
+                <div class="flex-1 bg-gray-50 px-8 py-6 flex flex-col justify-center relative overflow-hidden border-r-[3px] border-[#FF6600]/30 text-right">
+                    <div class="absolute top-0 left-0 opacity-[0.04]" style="width:100px;height:100px;">
+                        <svg viewBox="0 0 80 80"><polygon points="0,0 80,0 0,80" fill="#040812"/></svg>
+                    </div>
+                    <h3 class="font-title text-[var(--steel-blue)] text-lg uppercase leading-tight font-bold mb-2">
+                        Trabajo en Terreno
+                    </h3>
+                    <p class="text-gray-500 text-xs leading-relaxed italic">
+                        Proceso de montaje y soldadura estructural en campo. Personal certificado con equipos de protección y protocolos SOMA activos en toda la obra.
+                    </p>
+                </div>
+                <div class="relative flex-shrink-0 overflow-hidden" style="width: 50%;">
+                    <img src="imagenes/proyectos/image copy.png" alt="Vista detalle Institución Educativa"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute top-3 right-0 bg-[var(--steel-blue)] text-white text-[10px] font-bold px-4 py-1.5 tracking-widest uppercase label-tag-right z-10" style="clip-path: polygon(8% 100%, 100% 100%, 100% 0, 0 0);">
+                        Vista Detalle
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA 2: Nave Industrial -->
+            <div class="flex group shadow-md overflow-hidden border border-gray-100" style="height: 160px;">
+                <div class="relative flex-shrink-0 overflow-hidden" style="width: 50%;">
+                    <img src="imagenes/proyectos/nave/image.png" alt="Nave y Centro de Almacenamiento"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute top-3 left-0 bg-[#FF6600] text-white text-[10px] font-bold px-4 py-1.5 tracking-widest uppercase label-tag z-10">
+                        Obra Industrial
+                    </div>
+                </div>
+                <div class="flex-1 bg-white px-8 py-6 flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-[0.04]" style="width:100px;height:100px;">
+                        <svg viewBox="0 0 80 80"><polygon points="80,0 80,80 0,80" fill="#040812"/></svg>
+                    </div>
+                    <div class="w-8 h-0.5 bg-[#FF6600] mb-3"></div>
+                    <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase leading-tight font-bold mb-2">
+                        Montaje de Techo en Planta ADR
+                    </h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">
+                        Proyecto integral en Unidad Minera Shahuindo. Ejecución de montaje estructural y cobertura metálica bajo estrictos estándares de seguridad y calidad minera.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ESPECIALIDADES: compacto 2 columnas -->
+            <div class="bg-[var(--bg-dark)] px-8 py-6 relative overflow-hidden mt-2">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-[0.05]">
+                    <svg fill="#FF6600" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h4 class="text-[#FF6600] font-title text-sm font-bold tracking-[0.4em] uppercase mb-5">Especialidad en Grandes Estructuras</h4>
+                <div class="grid grid-cols-2 gap-x-8 gap-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                        <span class="text-white text-xs font-light">Coberturas metálicas de grandes luces.</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                        <span class="text-white text-xs font-light">Naves industriales y almacenes.</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                        <span class="text-white text-xs font-light">Cerramientos con aislación térmica.</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                        <span class="text-white text-xs font-light">Estructuras pesadas sector minero.</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                        <span class="text-white text-xs font-light">Diseño sismo-resistente.</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                        <span class="text-white text-xs font-light">Proyectos llave en mano.</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer discreto -->
+        <div class="h-6 bg-[var(--steel-blue)] w-full"></div>
+    </div>
+<!-- ======= FIN DE PROYECTOS_DESTACADOS.HTML ======= -->
+
+<!-- ======= INICIO DE SERVICIOS.HTML ======= -->
+<!-- ══════════════════════════════════════ -->
+    <!--           PÁGINA 4: Servicios 1 y 2   -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="a4-container">
+
+        <!-- CABECERA -->
+        <div class="h-[15%] bg-[var(--bg-dark)] px-12 flex flex-col justify-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 22px 22px;"></div>
+            <div class="absolute right-0 top-0 bottom-0" style="width:160px; background: linear-gradient(135deg, transparent 50%, rgba(255,102,0,0.08) 50%);"></div>
+            <img src="logo.jpeg" alt="INTAY CORPORATION" class="absolute top-2 right-4 w-60 object-contain z-20" style="height:auto; max-height:120px;">
+            <div class="relative z-10 flex items-center gap-3 mb-1">
+                <div class="w-8 h-[2px] bg-[#FF6600]"></div>
+                <span class="text-[#FF6600] font-title text-xl font-bold tracking-widest">04</span>
+            </div>
+            <h1 class="relative z-10 text-white font-title text-5xl uppercase tracking-tight leading-none">
+                Nuestras <span class="text-[#FF6600]">Especialidades</span>
+            </h1>
+            <div class="absolute right-0 bottom-0 w-32 h-1 bg-[#FF6600]"></div>
+        </div>
+
+        <!-- CONTENIDO: 2 servicios en filas -->
+        <div class="flex-1 px-12 py-8 flex flex-col justify-between">
+
+            <!-- SERVICIO 1: Techos Metálicos -->
+            <div class="flex group shadow-md overflow-hidden border border-gray-100">
+                <!-- Imagen izquierda -->
+                <div class="relative flex-shrink-0 overflow-hidden" style="width: 45%; height: 220px;">
+                    <img src="imagenes/servicios/techo_metalico.png" alt="Techos Metálicos"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute top-0 left-0 z-10 pointer-events-none">
+                        <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="0,36 0,0 36,0" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.8"/></svg>
+                    </div>
+                    <div class="absolute bottom-0 right-0 z-10 pointer-events-none">
+                        <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="36,0 36,36 0,36" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.8"/></svg>
+                    </div>
+                    <!-- Número -->
+                    <div class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center" style="background: rgba(4,8,18,0.75);">
+                        <span class="font-title text-[#FF6600] font-bold text-sm">01</span>
+                    </div>
+                </div>
+                <!-- Contenido derecha -->
+                <div class="flex-1 bg-white px-8 py-6 flex flex-col justify-center relative overflow-hidden" style="border-left: 4px solid #FF6600;">
+                    <div class="absolute top-0 right-0 opacity-[0.04]" style="width:120px;height:120px;">
+                        <svg viewBox="0 0 120 120"><polygon points="120,0 120,120 0,120" fill="#040812"/></svg>
+                    </div>
+                    <div class="w-8 h-0.5 bg-[#FF6600] mb-3"></div>
+                    <h2 class="font-title text-[var(--bg-dark)] text-3xl uppercase leading-tight font-bold mb-3">
+                        Techos Metálicos
+                    </h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        Soluciones avanzadas en coberturas para grandes áreas. Utilizamos materiales de alta resistencia y sistemas de fijación que garantizan hermeticidad y durabilidad estructural ante cualquier agente climático.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Autoportante</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Aluzinc</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Tratado Térmico</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEPARADOR -->
+            <div class="flex items-center gap-3">
+                <div class="h-px bg-gradient-to-r from-[#FF6600] to-transparent flex-1"></div>
+                <svg width="12" height="12" viewBox="0 0 18 18"><polygon points="9,0 18,9 9,18 0,9" fill="#FF6600" opacity="0.4"/></svg>
+                <div class="h-px bg-gradient-to-l from-[#FF6600] to-transparent flex-1"></div>
+            </div>
+
+            <!-- SERVICIO 2: Construcciones Metálicas — imagen a la DERECHA -->
+            <div class="flex group shadow-md overflow-hidden border border-gray-100">
+                <!-- Contenido izquierda -->
+                <div class="flex-1 bg-white px-8 py-6 flex flex-col justify-center relative overflow-hidden" style="border-right: 4px solid #FF6600;">
+                    <div class="absolute top-0 left-0 opacity-[0.04]" style="width:120px;height:120px;">
+                        <svg viewBox="0 0 120 120"><polygon points="0,0 120,0 0,120" fill="#040812"/></svg>
+                    </div>
+                    <div class="w-8 h-0.5 bg-[#FF6600] mb-3"></div>
+                    <h2 class="font-title text-[var(--bg-dark)] text-3xl uppercase leading-tight font-bold mb-3">
+                        Construcciones Metálicas
+                    </h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        Ejecución de naves industriales, almacenes y estructuras de soporte pesado. Ingeniería aplicada para optimizar costos y tiempos de montaje con personal certificado.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Naves</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Pórticos</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Alma Llena</span>
+                    </div>
+                </div>
+                <!-- Imagen derecha -->
+                <div class="relative flex-shrink-0 overflow-hidden" style="width: 45%; height: 220px;">
+                    <img src="imagenes/servicios/construcciones.png" alt="Construcciones Metálicas"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute top-0 left-0 z-10 pointer-events-none">
+                        <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="0,36 0,0 36,0" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.8"/></svg>
+                    </div>
+                    <div class="absolute bottom-0 right-0 z-10 pointer-events-none">
+                        <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="36,0 36,36 0,36" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.8"/></svg>
+                    </div>
+                    <div class="absolute top-3 left-3 z-10 w-8 h-8 flex items-center justify-center" style="background: rgba(4,8,18,0.75);">
+                        <span class="font-title text-[#FF6600] font-bold text-sm">02</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="h-6 bg-[var(--steel-blue)] w-full"></div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════ -->
+    <!--           PÁGINA 5: Servicios 3 y 4   -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="a4-container">
+
+        <!-- CABECERA -->
+        <div class="h-[15%] bg-[var(--bg-dark)] px-12 flex flex-col justify-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 22px 22px;"></div>
+            <div class="absolute right-0 top-0 bottom-0" style="width:160px; background: linear-gradient(135deg, transparent 50%, rgba(255,102,0,0.08) 50%);"></div>
+            <img src="logo.jpeg" alt="INTAY CORPORATION" class="absolute top-2 right-4 w-60 object-contain z-20" style="height:auto; max-height:120px;">
+            <div class="relative z-10 flex items-center gap-3 mb-1">
+                <div class="w-8 h-[2px] bg-[#FF6600]"></div>
+                <span class="text-[#FF6600] font-title text-xl font-bold tracking-widest">05</span>
+            </div>
+            <h1 class="relative z-10 text-white font-title text-5xl uppercase tracking-tight leading-none">
+                Nuestras <span class="text-[#FF6600]">Especialidades</span>
+            </h1>
+            <div class="absolute right-0 bottom-0 w-32 h-1 bg-[#FF6600]"></div>
+        </div>
+
+        <!-- CONTENIDO: 2 servicios en filas -->
+        <div class="flex-1 px-12 py-8 flex flex-col justify-between">
+
+            <!-- SERVICIO 3: Carpintería Industrial -->
+            <div class="flex group shadow-md overflow-hidden border border-gray-100">
+                <!-- Imagen izquierda -->
+                <div class="relative flex-shrink-0 overflow-hidden" style="width: 45%; height: 220px;">
+                    <img src="imagenes/servicios/carpinteria.png" alt="Carpintería Industrial"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute top-0 left-0 z-10 pointer-events-none">
+                        <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="0,36 0,0 36,0" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.8"/></svg>
+                    </div>
+                    <div class="absolute bottom-0 right-0 z-10 pointer-events-none">
+                        <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="36,0 36,36 0,36" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.8"/></svg>
+                    </div>
+                    <div class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center" style="background: rgba(4,8,18,0.75);">
+                        <span class="font-title text-[#FF6600] font-bold text-sm">03</span>
+                    </div>
+                </div>
+                <!-- Contenido derecha -->
+                <div class="flex-1 bg-white px-8 py-6 flex flex-col justify-center relative overflow-hidden" style="border-left: 4px solid #FF6600;">
+                    <div class="absolute top-0 right-0 opacity-[0.04]" style="width:120px;height:120px;">
+                        <svg viewBox="0 0 120 120"><polygon points="120,0 120,120 0,120" fill="#040812"/></svg>
+                    </div>
+                    <div class="w-8 h-0.5 bg-[#FF6600] mb-3"></div>
+                    <h2 class="font-title text-[var(--bg-dark)] text-3xl uppercase leading-tight font-bold mb-3">
+                        Carpintería Industrial
+                    </h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        Fabricación de elementos complementarios de alta seguridad: portones industriales, escalas de gato, protectores y barandas certificadas bajo normativa OSHA y SOMA.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Portones</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Seguridad</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Acabados</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEPARADOR -->
+            <div class="flex items-center gap-3">
+                <div class="h-px bg-gradient-to-r from-[#FF6600] to-transparent flex-1"></div>
+                <svg width="12" height="12" viewBox="0 0 18 18"><polygon points="9,0 18,9 9,18 0,9" fill="#FF6600" opacity="0.4"/></svg>
+                <div class="h-px bg-gradient-to-l from-[#FF6600] to-transparent flex-1"></div>
+            </div>
+
+            <!-- SERVICIO 4: Fabricación de Equipos — imagen a la DERECHA -->
+            <div class="flex group shadow-md overflow-hidden border border-gray-100">
+                <!-- Contenido izquierda -->
+                <div class="flex-1 bg-white px-8 py-6 flex flex-col justify-center relative overflow-hidden" style="border-right: 4px solid #FF6600;">
+                    <div class="absolute top-0 left-0 opacity-[0.04]" style="width:120px;height:120px;">
+                        <svg viewBox="0 0 120 120"><polygon points="0,0 120,0 0,120" fill="#040812"/></svg>
+                    </div>
+                    <div class="w-8 h-0.5 bg-[#FF6600] mb-3"></div>
+                    <h2 class="font-title text-[var(--bg-dark)] text-3xl uppercase leading-tight font-bold mb-3">
+                        Fabricación de Equipos
+                    </h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        Diseño y manufactura de equipos para la industria agroalimentaria y minería. Molinos, clasificadoras y tanques de alta precisión técnica con estándares internacionales.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Molinos</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Tolvas</span>
+                        <span class="bg-orange-50 text-[#FF6600] text-[10px] px-2 py-1 font-bold uppercase tracking-wider">Agroindustrial</span>
+                    </div>
+                </div>
+                <!-- Imagen derecha -->
+                <div class="relative flex-shrink-0 overflow-hidden" style="width: 55%; height: 220px;">
+                    <div class="w-full h-full flex">
+                        <div class="w-1/2 h-full overflow-hidden border-r-2 border-[#FF6600]/30 group">
+                            <img src="imagenes/servicios/fabricacion1.png" alt="Fabricación 1"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="w-1/2 h-full overflow-hidden border-l-2 border-[#FF6600]/30 group">
+                            <img src="imagenes/servicios/fabricacion2.png" alt="Fabricación 2"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="absolute top-0 left-0 z-10 pointer-events-none">
+                        <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="0,36 0,0 36,0" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.8"/></svg>
+                    </div>
+                    <div class="absolute bottom-0 right-0 z-10 pointer-events-none">
+                        <svg width="32" height="32" viewBox="0 0 36 36"><polyline points="36,0 36,36 0,36" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.8"/></svg>
+                    </div>
+                    <div class="absolute top-3 left-3 z-10 w-8 h-8 flex items-center justify-center" style="background: rgba(4,8,18,0.75);">
+                        <span class="font-title text-[#FF6600] font-bold text-sm">04</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BANDA INFERIOR: Sectores -->
+            <div class="bg-[var(--bg-dark)] px-8 py-4 flex items-center gap-6 relative overflow-hidden">
+                <div class="absolute right-0 top-0 bottom-0 opacity-5 w-32">
+                    <svg fill="#FF6600" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <span class="text-[#FF6600] font-title text-xs font-bold tracking-[0.3em] uppercase flex-shrink-0">Sectores Atendidos</span>
+                <div class="h-4 w-px bg-[#FF6600]/30 flex-shrink-0"></div>
+                <div class="flex items-center gap-6 flex-1">
+                    <div class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></div>
+                        <span class="text-white text-xs font-light">Educativo</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></div>
+                        <span class="text-white text-xs font-light">Industrial</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></div>
+                        <span class="text-white text-xs font-light">Minero</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></div>
+                        <span class="text-white text-xs font-light">Agroindustrial</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="h-6 bg-[var(--steel-blue)] w-full"></div>
+    </div>
+<!-- ======= FIN DE SERVICIOS.HTML ======= -->
+
+<!-- ======= INICIO DE CONTACTO.HTML ======= -->
+<div class="a4-container contacto-fix">
+        <!-- Fondo de Cuadrícula -->
+        <div class="industrial-grid-orange"></div>
+
+        <!-- Barra naranja superior -->
+        <div class="absolute top-0 left-0 w-full h-2 bg-[#FF6600] z-20"></div>
+
+        <!-- CONTENIDO CENTRALIZADO -->
+        <div class="relative z-10 flex flex-col items-center text-center w-full px-16 -mt-16">
+            
+            <!-- LOGO -->
+            <div class="flex flex-col items-center mb-12">
+                <img src="logo.jpeg" alt="INTAY CORPORATION" class="w-72 object-contain mb-4 shadow-xl" style="height:auto; max-height:180px;">
+                <div class="text-white font-title text-4xl tracking-wide leading-none uppercase">
+                    INTAY <span class="text-[#FF6600]">CORPORATION</span> SAC
+                </div>
+                <div class="mt-3 text-gray-500 text-[10px] uppercase tracking-[0.4em] font-medium">
+                    Ingeniería Metalmecánica · Cajabamba · Perú
+                </div>
+            </div>
+
+            <!-- TÍTULO DE CIERRE -->
+            <div class="mb-16">
+                <h2 class="text-white font-title text-5xl uppercase leading-tight tracking-tight mb-2">
+                    Haga realidad su<br>próximo proyecto
+                </h2>
+                <h3 class="text-[#FF6600] font-title text-3xl uppercase tracking-widest font-bold">
+                    Contáctenos hoy
+                </h3>
+            </div>
+
+            <!-- TARJETAS DE CONTACTO -->
+            <div class="flex flex-col gap-6 w-full max-w-md">
+                
+                <!-- Teléfono -->
+                <div class="bg-[#0A1120] border border-white/5 p-6 rounded-sm flex items-center gap-6 shadow-2xl">
+                    <div class="w-12 h-12 bg-[#FF6600]/10 rounded-full flex items-center justify-center text-[#FF6600]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[#FF6600] text-[10px] font-bold uppercase tracking-widest mb-1">Teléfono / WhatsApp</p>
+                        <p class="text-white text-xl font-light">914 042 943 <span class="text-white/30 mx-2">|</span> 997 607 951</p>
+                    </div>
+                </div>
+
+                <!-- Correo -->
+                <div class="bg-[#0A1120] border border-white/5 p-6 rounded-sm flex items-center gap-6 shadow-2xl">
+                    <div class="w-12 h-12 bg-[#FF6600]/10 rounded-full flex items-center justify-center text-[#FF6600]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[#FF6600] text-[10px] font-bold uppercase tracking-widest mb-1">Correo Electrónico</p>
+                        <p class="text-white text-lg font-light">intaycorp@gmail.com</p>
+                    </div>
+                </div>
+
+                <!-- Ubicación -->
+                <div class="bg-[#0A1120] border border-white/5 p-6 rounded-sm flex items-center gap-6 shadow-2xl">
+                    <div class="w-12 h-12 bg-[#FF6600]/10 rounded-full flex items-center justify-center text-[#FF6600]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[#FF6600] text-[10px] font-bold uppercase tracking-widest mb-1">Ubicación Central</p>
+                        <p class="text-white text-lg font-light leading-tight">Jr. Blondel 921, Cajabamba</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PIE DE PÁGINA -->
+        <div class="absolute bottom-0 left-0 w-full px-16 py-10">
+            <div class="w-full h-[1px] bg-white/10 mb-6"></div>
+            <div class="flex justify-between items-center text-[10px] text-white/30 uppercase tracking-[0.3em] font-medium">
+                <span>Intay Corporation SAC</span>
+                <span>Perú</span>
+            </div>
+        </div>
+
+    </div>
+<!-- ======= FIN DE CONTACTO.HTML ======= -->
+
+
+</body>
+</html>
