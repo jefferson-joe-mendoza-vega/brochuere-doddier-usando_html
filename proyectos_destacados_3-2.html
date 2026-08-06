@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 3.2 - Proyecto Educativo | INTAY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #040812;
+            --orange-brand: #FF6600;
+            --steel-blue: #1C2D42;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-title {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* Contenedor A4 Estricto para Dossier */
+        .a4-container {
+            width: 794px;
+            height: 1123px; /* Altura exacta A4 a 96dpi */
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label-tag-left {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .a4-container {
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="a4-container">
+
+        <!-- CABECERA -->
+        <div class="h-[14%] bg-[var(--bg-dark)] px-12 flex flex-col justify-center relative flex-shrink-0">
+            <img src="logo.jpeg" alt="INTAY CORPORATION" class="absolute top-3 right-6 w-52 object-contain z-20" style="height:auto; max-height:100px;">
+            
+            <div class="relative z-10 flex items-center gap-3 mb-1">
+                <div class="w-8 h-[2px] bg-[#FF6600]"></div>
+                <span class="text-[#FF6600] font-title text-lg font-bold tracking-widest">03.2</span>
+                <span class="text-gray-400 font-title text-sm tracking-widest uppercase ml-2">| Infraestructura Educativa</span>
+            </div>
+            
+            <h1 class="relative z-10 text-white font-title text-3xl uppercase tracking-tight leading-tight w-3/4">
+                I.E. Nuestra Señora <br> <span class="text-[#FF6600]">del Rosario - Cajabamba</span>
+            </h1>
+            <div class="absolute right-0 bottom-0 w-32 h-1 bg-[#FF6600]"></div>
+        </div>
+
+        <!-- FOTO PRINCIPAL (HERO) -->
+        <div class="relative h-[32%] w-full bg-gray-200 overflow-hidden group">
+            <!-- REEMPLAZAR AQUÍ CON LA FOTO DEL PROYECTO TERMINADO (Ej. Imagen 19) -->
+            <img src="\imagenes\proyectos\3-2\image.png" alt="Proyecto Terminado" class="w-full h-full object-cover scale-[0.78] transition-transform duration-700 group-hover:scale-[0.84]">
+            
+            <!-- Etiqueta sobre la imagen -->
+            <div class="absolute top-4 left-0 bg-[#FF6600] text-white text-xs font-bold px-6 py-2 tracking-widest uppercase label-tag-left z-10 shadow-lg">
+                Cobertura Metálica de Gran Luz
+            </div>
+            
+            <!-- Degradado inferior para transición suave -->
+            <div class="absolute bottom-0 w-full h-24 bg-gradient-to-t from-white to-transparent"></div>
+        </div>
+
+        <!-- CONTENIDO TÉCNICO Y DESCRIPTIVO -->
+        <div class="flex-1 px-12 py-6 grid grid-cols-12 gap-8">
+            
+            <!-- COLUMNA IZQUIERDA: Descripción y Alcance -->
+            <div class="col-span-7 flex flex-col justify-start">
+                
+                <h3 class="font-title text-[var(--bg-dark)] text-2xl uppercase leading-tight font-bold mb-3 flex items-center gap-3">
+                    <span class="w-1.5 h-6 bg-[#FF6600] inline-block"></span>
+                    Descripción del Proyecto
+                </h3>
+                
+                <p class="text-gray-600 text-sm leading-relaxed mb-6 text-justify">
+                    Construcción integral de cobertura metálica sobre la plataforma del patio secundario. El proyecto fue diseñado para brindar protección climática frente a lluvias y radiación, garantizando un espacio seguro para el desarrollo de actividades académicas, deportivas y culturales durante todo el año, integrándose perfectamente con las edificaciones existentes.
+                </p>
+
+                <h4 class="font-title text-[var(--steel-blue)] text-lg uppercase font-bold mb-3 border-b border-gray-200 pb-2">
+                    Alcance de Ejecución
+                </h4>
+                
+                <ul class="space-y-3 mt-4">
+                    <li class="flex items-start gap-3">
+                        <div class="w-2 h-2 mt-1.5 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                        <span class="text-gray-700 text-sm leading-snug">Fabricación y montaje de columnas y <strong>cerchas principales tipo tijeral</strong>.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="w-2 h-2 mt-1.5 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                        <span class="text-gray-700 text-sm leading-snug">Instalación de <strong>cobertura metálica tipo TR5</strong> con sistema de arriostramiento.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="w-2 h-2 mt-1.5 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                        <span class="text-gray-700 text-sm leading-snug">Implementación de <strong>sistema de evacuación pluvial</strong> (canaletas y bajantes).</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="w-2 h-2 mt-1.5 rounded-full bg-[#FF6600] flex-shrink-0"></div>
+                        <span class="text-gray-700 text-sm leading-snug">Ampliación de 10m² de techo y adecuación arquitectónica de techos contiguos y barandas.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- COLUMNA DERECHA: Datos Técnicos y Galería de Proceso -->
+            <div class="col-span-5 flex flex-col justify-between">
+                
+                <!-- Tarjeta de Especificaciones Técnicas -->
+                <div class="bg-[var(--bg-dark)] p-6 relative overflow-hidden rounded-sm shadow-md mb-6">
+                    <div class="absolute -top-4 -right-4 w-24 h-24 opacity-10">
+                        <svg fill="#FF6600" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.83L17.17 19H6.83L12 5.83zM11 10v5h2v-5h-2zm0 6v2h2v-2h-2z"/></svg>
+                    </div>
+                    
+                    <h4 class="text-[#FF6600] font-title text-sm font-bold tracking-[0.2em] uppercase mb-4 border-b border-gray-700 pb-2">
+                        Ficha Técnica
+                    </h4>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <span class="block text-gray-400 text-[10px] uppercase tracking-wider">Material Estructural</span>
+                            <span class="block text-white text-xs font-light">Acero ASTM A500 y A-36</span>
+                        </div>
+                        <div>
+                            <span class="block text-gray-400 text-[10px] uppercase tracking-wider">Procesos de Soldadura</span>
+                            <span class="block text-white text-xs font-light">SMAW y FCAW (Personal 3G/4G)</span>
+                        </div>
+                        <div>
+                            <span class="block text-gray-400 text-[10px] uppercase tracking-wider">Normativas Aplicadas</span>
+                            <span class="block text-white text-xs font-light">E-020, E-030 (Sismorresistente) y E-090</span>
+                        </div>
+                        <div>
+                            <span class="block text-gray-400 text-[10px] uppercase tracking-wider">Protección</span>
+                            <span class="block text-white text-xs font-light">Sistema anticorrosivo industrial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Galería de Proceso -->
+                <div class="flex-1 flex flex-col gap-3">
+                    <!-- FOTO PROCESO 1 (Ej. Imagen 12: Izaje nocturno) -->
+                    <div class="bg-gray-200 relative group overflow-hidden shadow-sm border border-gray-100 h-28 w-full">
+                        <img src="\imagenes\proyectos\3-2\izaje.png" alt="Proceso de Izaje" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute bottom-0 w-full bg-black/60 backdrop-blur-sm p-1.5 transform translate-y-full group-hover:translate-y-0 transition-transform">
+                            <span class="text-white text-[9px] block text-center uppercase tracking-wider">Izaje de Cerchas</span>
+                        </div>
+                    </div>
+                    
+                    <!-- FOTO PROCESO 2 (Ej. Imagen 15: Esqueleto estructural) -->
+                    <div class="bg-gray-200 relative group overflow-hidden shadow-sm border border-gray-100 h-28 w-full">
+                        <img src="\imagenes\proyectos\3-2\estructura metalica.png" alt="Esqueleto Estructural" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute bottom-0 w-full bg-black/60 backdrop-blur-sm p-1.5 transform translate-y-full group-hover:translate-y-0 transition-transform">
+                            <span class="text-white text-[9px] block text-center uppercase tracking-wider">Montaje Estructural</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FOOTER DISCRETO -->
+        <div class="h-5 bg-[var(--steel-blue)] w-full flex-shrink-0 mt-auto"></div>
+    </div>
+
+</body>
+</html>
